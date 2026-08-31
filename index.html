@@ -587,8 +587,8 @@ function createPetal() {
   petal.style.left = Math.random() * 100 + "vw";
   petal.style.width = (6 + Math.random() * 14) + "px";
 petal.style.height = (4 + Math.random() * 9) + "px";
-  petal.style.background =
-    petalColors[Math.floor(Math.random() * petalColors.length)];
+  petal.style.transform =
+  `rotate(${Math.random() * 360}deg)`;
 
   petal.style.animationDuration =
     (7 + Math.random() * 6) + "s";
