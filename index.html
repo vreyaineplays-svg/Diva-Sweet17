@@ -1,0 +1,480 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diva's Birthday</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f8f3ea;
+      color: #3d3028;
+      line-height: 1.6;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        linear-gradient(rgba(35,27,23,.35), rgba(35,27,23,.45)),
+        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2000&q=85");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      max-width: 750px;
+      color: white;
+    }
+
+    .small-title {
+      font-size: 14px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 10vw, 110px);
+      font-weight: normal;
+      line-height: .95;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .scroll-button {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 13px 28px;
+      border: 1px solid white;
+      color: white;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .scroll-button:hover {
+      background: white;
+      color: #3d3028;
+    }
+
+    .section {
+      padding: 90px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .intro {
+      text-align: center;
+    }
+
+    .section-label {
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      opacity: .7;
+    }
+
+    .intro h2 {
+      font-size: 42px;
+      font-weight: normal;
+      margin-bottom: 25px;
+    }
+
+    .intro p {
+      max-width: 650px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    .details {
+      background: #ebe2d4;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      text-align: center;
+    }
+
+    .detail-card {
+      padding: 30px 20px;
+      border: 1px solid rgba(61,48,40,.2);
+    }
+
+    .detail-card .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .detail-card h3 {
+      font-size: 20px;
+      font-weight: normal;
+      margin-bottom: 8px;
+    }
+
+    .rsvp-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .rsvp-title h2 {
+      font-size: 45px;
+      font-weight: normal;
+    }
+
+    form {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 9px;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid #b9aa9a;
+      background: transparent;
+      color: #3d3028;
+      font-family: inherit;
+      font-size: 16px;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      background: #3d3028;
+      color: white;
+      font-family: inherit;
+      font-size: 16px;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+
+    .submit-button:disabled {
+      opacity: .5;
+      cursor: wait;
+    }
+
+    #status {
+      text-align: center;
+      margin-top: 20px;
+      min-height: 25px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: #2e241f;
+      color: white;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 700px) {
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 65px 20px;
+      }
+
+      .intro h2,
+      .rsvp-title h2 {
+        font-size: 34px;
+      }
+
+      .hero h1 {
+        font-size: 65px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="small-title">You're Invited</div>
+
+      <h1>Diva's<br>Birthday</h1>
+
+      <p>A little celebration for a very special day.</p>
+
+      <a href="#rsvp" class="scroll-button">RSVP</a>
+    </div>
+  </section>
+
+
+  <section class="section intro">
+    <div class="container">
+      <div class="section-label">A Special Day</div>
+
+      <h2>Come celebrate with me.</h2>
+
+      <p>
+        I'd love to have you there to celebrate another year,
+        make some memories, eat good food, and have a wonderful time together.
+      </p>
+    </div>
+  </section>
+
+
+  <section class="section details">
+    <div class="container">
+
+      <div class="detail-grid">
+
+        <div class="detail-card">
+          <div class="icon">📅</div>
+          <h3>Date</h3>
+          <p>Coming Soon</p>
+        </div>
+
+        <div class="detail-card">
+          <div class="icon">🕰️</div>
+          <h3>Time</h3>
+          <p>Coming Soon</p>
+        </div>
+
+        <div class="detail-card">
+          <div class="icon">📍</div>
+          <h3>Location</h3>
+          <p>Coming Soon</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="rsvp">
+    <div class="container">
+
+      <div class="rsvp-title">
+        <div class="section-label">RSVP</div>
+        <h2>Will you be joining?</h2>
+      </div>
+
+
+      <form id="rsvpForm">
+
+        <div class="form-group">
+          <label for="name">YOUR NAME</label>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+          >
+        </div>
+
+
+        <div class="form-group">
+          <label for="attendance">ATTENDANCE</label>
+
+          <select id="attendance" name="attendance" required>
+
+            <option value="" disabled selected>
+              Select your answer
+            </option>
+
+            <option value="Yes">
+              Yes, I'll be there!
+            </option>
+
+            <option value="No">
+              Sorry, I can't make it.
+            </option>
+
+          </select>
+        </div>
+
+
+        <div class="form-group">
+          <label for="food">FOOD</label>
+
+          <input
+            type="text"
+            id="food"
+            name="food"
+            placeholder="What would you like to eat?"
+            required
+          >
+        </div>
+
+
+        <div class="form-group">
+          <label for="drink">DRINK</label>
+
+          <select id="drink" name="drink" required>
+
+            <option value="" disabled selected>
+              Choose your drink
+            </option>
+
+            <option value="Iced Tea">
+              🧊 Iced Tea
+            </option>
+
+            <option value="Hot Tea">
+              ☕ Hot Tea
+            </option>
+
+            <option value="Lemon Tea">
+              🍋 Lemon Tea
+            </option>
+
+          </select>
+        </div>
+
+
+        <div class="form-group">
+          <label for="note">NOTE</label>
+
+          <textarea
+            id="note"
+            name="note"
+            placeholder="Anything you'd like to tell me?"
+          ></textarea>
+        </div>
+
+
+        <button
+          type="submit"
+          class="submit-button"
+          id="submitButton"
+        >
+          SEND RSVP
+        </button>
+
+        <div id="status"></div>
+
+      </form>
+
+    </div>
+  </section>
+
+
+  <footer>
+    With love, Diva ♡
+  </footer>
+
+
+  <script>
+
+    const SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbzPmh7UWf86L90yNUIox9L6huCfDcbVi0wgOBq64ZnfBbaeSk1KRvXyF4acis0b9jcY/exec";
+
+
+    const form = document.getElementById("rsvpForm");
+    const button = document.getElementById("submitButton");
+    const status = document.getElementById("status");
+
+
+    form.addEventListener("submit", async function(event) {
+
+      event.preventDefault();
+
+      button.disabled = true;
+      button.textContent = "SENDING...";
+
+      status.textContent = "";
+
+
+      const data = {
+        name: document.getElementById("name").value,
+        attendance: document.getElementById("attendance").value,
+        food: document.getElementById("food").value,
+        drink: document.getElementById("drink").value,
+        note: document.getElementById("note").value
+      };
+
+
+      try {
+
+        await fetch(SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+          },
+          body: JSON.stringify(data)
+        });
+
+
+        status.textContent =
+          "Thank you! Your RSVP has been sent ♡";
+
+        form.reset();
+
+
+      } catch (error) {
+
+        console.error(error);
+
+        status.textContent =
+          "Something went wrong. Please try again.";
+
+      }
+
+
+      button.disabled = false;
+      button.textContent = "SEND RSVP";
+
+    });
+
+  </script>
+
+</body>
+</html>
+```
