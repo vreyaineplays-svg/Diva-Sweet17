@@ -19,6 +19,20 @@
 
   /* CSS website kamu yang lain... */
 
+      #musicButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+  padding: 10px 16px;
+  border: 1px solid #FFF4EE;
+  background: rgba(60, 35, 45, 0.65);
+  color: #FFF4EE;
+  border-radius: 20px;
+  font-family: Georgia, serif;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+}
 
 /* 🌸 Falling Flower Petals */
 .petal {
@@ -49,11 +63,15 @@
     }
 
     body {
+           <button id="musicButton" onclick="toggleMusic()">♫ Music</button>
+          <audio id="bgMusic" loop>
+  <source src="classical-piano.mp3" type="audio/mpeg">
+</audio>
       font-family: Georgia, "Times New Roman", serif;
       background: #f8f3ea;
       color: #3d3028;
       line-height: 1.6;
-    }
+    }   
 
 .hero {
   min-height: 100vh;
@@ -622,6 +640,19 @@ function createPetal() {
 }
 
 setInterval(createPetal, 650);
+
+    const bgMusic = document.getElementById("bgMusic");
+const musicButton = document.getElementById("musicButton");
+
+function toggleMusic() {
+  if (bgMusic.paused) {
+    bgMusic.play();
+    musicButton.textContent = "♫ Music ON";
+  } else {
+    bgMusic.pause();
+    musicButton.textContent = "♫ Music OFF";
+  }
+}
 
 
   </script>
