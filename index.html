@@ -572,6 +572,39 @@
 
     });
 
+    // 🌸 Falling flower petals
+const petalColors = [
+  "#D9A9A8",
+  "#C98F91",
+  "#E5C1BE",
+  "#F0D9D2"
+];
+
+function createPetal() {
+  const petal = document.createElement("div");
+  petal.className = "petal";
+
+  petal.style.left = Math.random() * 100 + "vw";
+  petal.style.width = (8 + Math.random() * 8) + "px";
+  petal.style.height = (6 + Math.random() * 5) + "px";
+  petal.style.background =
+    petalColors[Math.floor(Math.random() * petalColors.length)];
+
+  petal.style.animationDuration =
+    (7 + Math.random() * 6) + "s";
+
+  petal.style.animationDelay =
+    (Math.random() * 2) + "s";
+
+  document.body.appendChild(petal);
+
+  setTimeout(() => {
+    petal.remove();
+  }, 15000);
+}
+
+setInterval(createPetal, 650);
+
   </script>
 
 </body>
