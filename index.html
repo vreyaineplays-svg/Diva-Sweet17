@@ -30,25 +30,27 @@
     animation: petalFall linear forwards;
   }
 
-  @keyframes petalFall {
-    0% {
-      opacity: 0;
-      transform: translate3d(0, -20px, 0) rotate(0deg);
-    }
-
-    10% {
-      opacity: 0.65;
-    }
-
-    50% {
-      transform: translate3d(40px, 50vh, 0) rotate(180deg);
-    }
-
-    100% {
-      opacity: 0;
-      transform: translate3d(-30px, 110vh, 0) rotate(360deg);
-    }
+ @keyframes petalFall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0) rotate(var(--rotation));
   }
+
+  10% {
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: translate3d(40px, 50vh, 0)
+               rotate(calc(var(--rotation) + 180deg));
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(-30px, 110vh, 0)
+               rotate(calc(var(--rotation) + 360deg));
+  }
+}
 
     html {
       scroll-behavior: smooth;
@@ -587,8 +589,10 @@ function createPetal() {
   petal.style.left = Math.random() * 100 + "vw";
   petal.style.width = (6 + Math.random() * 14) + "px";
 petal.style.height = (4 + Math.random() * 9) + "px";
-  petal.style.transform =
-  `rotate(${Math.random() * 360}deg)`;
+  petal.style.setProperty(
+  "--rotation",
+  Math.random() * 360 + "deg"
+);
 
   petal.style.animationDuration =
     (7 + Math.random() * 6) + "s";
