@@ -17,40 +17,29 @@
   /* CSS website kamu yang lain... */
 
 
-  /* 🌸 Falling Flower Petals */
-  .petal {
-    position: fixed;
-    top: -30px;
-    width: 12px;
-    height: 8px;
-    border-radius: 100% 0 100% 0;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0;
-    animation: petalFall linear forwards;
+/* 🌸 Falling Flower Petals */
+.petal {
+  position: fixed;
+  top: -30px;
+  width: 12px;
+  height: 8px;
+  border-radius: 100% 0 100% 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.7;
+  animation: petalFall 8s linear forwards;
+}
+
+@keyframes petalFall {
+  from {
+    transform: translateY(-30px) rotate(0deg);
   }
 
- @keyframes petalFall {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, -20px, 0) rotate(var(--rotation));
-  }
-
-  10% {
-    opacity: 0.65;
-  }
-
-  50% {
-    transform: translate3d(40px, 50vh, 0)
-               rotate(calc(var(--rotation) + 180deg));
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate3d(-30px, 110vh, 0)
-               rotate(calc(var(--rotation) + 360deg));
+  to {
+    transform: translateY(110vh) rotate(360deg);
   }
 }
+
 
     html {
       scroll-behavior: smooth;
@@ -587,18 +576,20 @@ function createPetal() {
   petal.className = "petal";
 
   petal.style.left = Math.random() * 100 + "vw";
-  petal.style.width = (6 + Math.random() * 14) + "px";
-petal.style.height = (4 + Math.random() * 9) + "px";
-  petal.style.setProperty(
-  "--rotation",
-  Math.random() * 360 + "deg"
-);
+
+  petal.style.width =
+    (6 + Math.random() * 14) + "px";
+
+  petal.style.height =
+    (4 + Math.random() * 9) + "px";
+
+  petal.style.background =
+    petalColors[
+      Math.floor(Math.random() * petalColors.length)
+    ];
 
   petal.style.animationDuration =
     (7 + Math.random() * 6) + "s";
-
-  petal.style.animationDelay =
-    (Math.random() * 2) + "s";
 
   document.body.appendChild(petal);
 
@@ -608,6 +599,7 @@ petal.style.height = (4 + Math.random() * 9) + "px";
 }
 
 setInterval(createPetal, 650);
+
 
   </script>
 
