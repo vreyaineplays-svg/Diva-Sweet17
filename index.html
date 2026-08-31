@@ -6,12 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Diva's Sweet 17</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+
+    <style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* CSS website kamu yang lain... */
+
+
+  /* 🌸 Falling Flower Petals */
+  .petal {
+    position: fixed;
+    top: -30px;
+    width: 12px;
+    height: 8px;
+    border-radius: 100% 0 100% 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    animation: petalFall linear forwards;
+  }
+
+  @keyframes petalFall {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, -20px, 0) rotate(0deg);
     }
+
+    10% {
+      opacity: 0.65;
+    }
+
+    50% {
+      transform: translate3d(40px, 50vh, 0) rotate(180deg);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate3d(-30px, 110vh, 0) rotate(360deg);
+    }
+  }
 
     html {
       scroll-behavior: smooth;
