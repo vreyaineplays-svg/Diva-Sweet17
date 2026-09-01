@@ -746,7 +746,40 @@ textarea {
   min-height: 25px;
 }
 
+   /* ═══════════════════════════════
+   🌸 PETAL PILE ABOVE FOOTER
+   ═══════════════════════════════ */
 
+.petal-pile {
+  position: relative;
+  height: 75px;
+  margin-bottom: -1px;
+  overflow: hidden;
+
+  background: #f8f3ea;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+/* Individual petals in the pile */
+.pile-petal {
+  position: absolute;
+  bottom: -3px;
+
+  width: 22px;
+  height: 13px;
+
+  border-radius: 100% 0 100% 0;
+
+  opacity: 0.85;
+
+  transform-origin: center;
+}
+   
 /* =========================================
    FOOTER
 ========================================= */
