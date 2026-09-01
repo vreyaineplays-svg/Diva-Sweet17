@@ -183,20 +183,6 @@
     width: 55px;
   }
 }
-      #musicButton {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 10000;
-  padding: 10px 16px;
-  border: 1px solid #FFF4EE;
-  background: rgba(60, 35, 45, 0.65);
-  color: #FFF4EE;
-  border-radius: 20px;
-  font-family: Georgia, serif;
-  cursor: pointer;
-  backdrop-filter: blur(5px);
-}
 
 /* 🌸 Falling Flower Petals */
 .petal {
@@ -485,7 +471,6 @@
   </style>
 </body>
 <!-- ✦ OPENING SCREEN ✦ -->
-
 <div id="openingScreen">
 
   <div class="opening-content">
@@ -514,39 +499,15 @@
 
 </div>
 
-<audio id="bgMusic" loop>
-  <source src="A sprinkle of happiness.mp3" type="audio/mpeg">
-</audio>
-
-
 <!-- 🎵 Background Music -->
-
 <audio id="bgMusic" loop>
   <source src="A sprinkle of happiness.mp3" type="audio/mpeg">
 </audio>
 
-  <div id="openingScreen" onclick="enterInvitation()">
-  <div class="opening-content">
-
-    <div class="opening-small">
-      You're Invited
-    </div>
-
-    <div class="opening-title">
-      Diva's Sweet 17
-    </div>
-
-    <div class="opening-enter">
-      Tap to Enter ♡
-    </div>
-
-  </div>
-</div>
-  
-  <button id="musicButton" onclick="toggleMusic()">♫ Music</button>
-          <audio id="bgMusic" loop>
-  <source src="A sprinkle of happiness.mp3" type="audio/mpeg">
-</audio> 
+<!-- 🎵 Music Control -->
+<button id="musicButton" onclick="toggleMusic()">
+  ♫ Music
+</button>
 
   <section class="hero">
     <div class="hero-content">
@@ -887,28 +848,279 @@ function toggleMusic() {
 // ✦ OPENING + BACKGROUND MUSIC ✦
 // ═══════════════════════════════
 
-const bgMusic = document.getElementById("bgMusic");
-const openingScreen = document.getElementById("openingScreen");
+<script>
 
-const bgMusic = document.getElementById("bgMusic");
-const openingScreen = document.getElementById("openingScreen");
-const enterButton = document.getElementById("enterButton");
+const SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbzPmh7UWf86L90yNUIox9L6huCfDcbVi0wgOBq64ZnfBbaeSk1KRvXyF4acis0b9jcY/exec";
 
-enterButton.addEventListener("click", function (event) {
+
+// ===============================
+// RSVP
+// ===============================
+
+const form = document.getElementById("rsvpForm");
+const button = document.getElementById("submitButton");
+const status = document.getElementById("status");
+
+form.addEventListener("submit", async function(event) {
+
+  event.preventDefault();
+
+  button.disabled = true;
+  button.textContent = "SENDING...";
+  status.textContent = "";
+
+  const data = {
+    name: document.getElementById("name").value,
+    attendance: document.getElementById("attendance").value,
+    food: document.getElementById("food").value,
+    drink: document.getElementById("drink").value,
+    note: document.getElementById("note").value
+  };
+
+  try {
+
+    await fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify(data)
+    });
+
+    status.textContent =
+      "Thank you! Your RSVP has been sent ♡";
+
+    form.reset();
+
+  } catch (error) {
+
+    console.error(error);
+
+    status.textContent =
+      "Something went wrong. Please try again.";
+
+  }
+
+  button.disabled = false;
+  button.textContent = "SEND RSVP";
+
+});
+
+
+// ===============================
+// 🌸 FALLING FLOWER PETALS
+// ===============================
+
+const petalColors = [
+  "#D9A9A8",
+  "#C98F91",
+  "#E5C1BE",
+  "#F0D9D2"
+];
+
+function createPetal() {
+
+  const petal = document.createElement("div");
+
+  petal.className = "petal";
+
+  petal.style.left =
+    Math.random() * 100 + "vw";
+
+  petal.style.width =
+    (6 + Math.random() * 14) + "px";
+
+  petal.style.height =
+    (4 + Math.random() * 9) + "px";
+
+  petal.style.background =
+    petalColors[
+      Math.floor(Math.random() * petalColors.length)
+    ];
+
+  petal.style.animationDuration =
+    (7 + Math.random() * 6) + "s";
+
+  document.body.appendChild(petal);
+
+  setTimeout(() => {
+    petal.remove();
+  }, 15000);
+}
+
+setInterval(createPetal, 650);
+
+
+<script>
+
+const SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbzPmh7UWf86L90yNUIox9L6huCfDcbVi0wgOBq64ZnfBbaeSk1KRvXyF4acis0b9jcY/exec";
+
+
+// ===============================
+// RSVP
+// ===============================
+
+const form = document.getElementById("rsvpForm");
+const button = document.getElementById("submitButton");
+const status = document.getElementById("status");
+
+form.addEventListener("submit", async function(event) {
+
+  event.preventDefault();
+
+  button.disabled = true;
+  button.textContent = "SENDING...";
+  status.textContent = "";
+
+  const data = {
+    name: document.getElementById("name").value,
+    attendance: document.getElementById("attendance").value,
+    food: document.getElementById("food").value,
+    drink: document.getElementById("drink").value,
+    note: document.getElementById("note").value
+  };
+
+  try {
+
+    await fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify(data)
+    });
+
+    status.textContent =
+      "Thank you! Your RSVP has been sent ♡";
+
+    form.reset();
+
+  } catch (error) {
+
+    console.error(error);
+
+    status.textContent =
+      "Something went wrong. Please try again.";
+
+  }
+
+  button.disabled = false;
+  button.textContent = "SEND RSVP";
+
+});
+
+
+// ===============================
+// 🌸 FALLING FLOWER PETALS
+// ===============================
+
+const petalColors = [
+  "#D9A9A8",
+  "#C98F91",
+  "#E5C1BE",
+  "#F0D9D2"
+];
+
+function createPetal() {
+
+  const petal = document.createElement("div");
+
+  petal.className = "petal";
+
+  petal.style.left =
+    Math.random() * 100 + "vw";
+
+  petal.style.width =
+    (6 + Math.random() * 14) + "px";
+
+  petal.style.height =
+    (4 + Math.random() * 9) + "px";
+
+  petal.style.background =
+    petalColors[
+      Math.floor(Math.random() * petalColors.length)
+    ];
+
+  petal.style.animationDuration =
+    (7 + Math.random() * 6) + "s";
+
+  document.body.appendChild(petal);
+
+  setTimeout(() => {
+    petal.remove();
+  }, 15000);
+}
+
+setInterval(createPetal, 650);
+
+
+// ===============================
+// 🎵 OPENING + MUSIC
+// ===============================
+
+const bgMusic =
+  document.getElementById("bgMusic");
+
+const openingScreen =
+  document.getElementById("openingScreen");
+
+const enterButton =
+  document.getElementById("enterButton");
+
+const musicButton =
+  document.getElementById("musicButton");
+
+
+enterButton.addEventListener("click", function(event) {
 
   event.stopPropagation();
 
   bgMusic.play()
     .then(() => {
-      console.log("Music started");
+
+      musicButton.textContent =
+        "♫ Music ON";
+
     })
     .catch((error) => {
-      console.log("Music could not start:", error);
+
+      console.log(
+        "Music could not start:",
+        error
+      );
+
     });
 
   openingScreen.classList.add("hide");
 
 });
+
+
+function toggleMusic() {
+
+  if (bgMusic.paused) {
+
+    bgMusic.play();
+
+    musicButton.textContent =
+      "♫ Music ON";
+
+  } else {
+
+    bgMusic.pause();
+
+    musicButton.textContent =
+      "♫ Music OFF";
+
+  }
+
+}
+
+</script>
 
   </script>
 
