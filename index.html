@@ -779,6 +779,50 @@ textarea {
 
   transform-origin: center;
 }
+/* ═══════════════════════════════
+   🌸 PETALS PILED UP AT THE BOTTOM
+   ═══════════════════════════════ */
+
+.petal-pile {
+  position: relative;
+  height: 105px;
+  background: #f8f3ea;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Soft shadow underneath the pile */
+.petal-pile::before {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: -20px;
+  height: 55px;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(127, 79, 89, 0.12),
+    transparent 70%
+  );
+
+  filter: blur(7px);
+}
+
+/* Each fallen petal */
+.pile-petal {
+  position: absolute;
+
+  width: 25px;
+  height: 15px;
+
+  border-radius: 100% 0 100% 0;
+
+  opacity: 0.85;
+
+  box-shadow:
+    0 1px 3px rgba(70, 45, 50, 0.12);
+}
    
 /* =========================================
    FOOTER
@@ -1296,36 +1340,99 @@ type="button"
 
 </section>
 
-<!-- =========================================
-     FOOTER
-========================================= -->
+   <!-- 🌸 PETALS PILED UP -->
 
-<!-- 🌸 PETAL PILE -->
 <div class="petal-pile">
 
-  <span class="pile-petal" style="left: 8%; transform: rotate(25deg); background:#D9A9A8;"></span>
-  <span class="pile-petal" style="left: 15%; transform: rotate(-15deg); background:#C98F91;"></span>
-  <span class="pile-petal" style="left: 22%; transform: rotate(40deg); background:#E5C1BE;"></span>
-  <span class="pile-petal" style="left: 29%; transform: rotate(-30deg); background:#F0D9D2;"></span>
-  <span class="pile-petal" style="left: 36%; transform: rotate(15deg); background:#D9A9A8;"></span>
-  <span class="pile-petal" style="left: 43%; transform: rotate(-40deg); background:#C98F91;"></span>
-  <span class="pile-petal" style="left: 50%; transform: rotate(20deg); background:#E5C1BE;"></span>
-  <span class="pile-petal" style="left: 57%; transform: rotate(-20deg); background:#F0D9D2;"></span>
-  <span class="pile-petal" style="left: 64%; transform: rotate(35deg); background:#D9A9A8;"></span>
-  <span class="pile-petal" style="left: 71%; transform: rotate(-35deg); background:#C98F91;"></span>
-  <span class="pile-petal" style="left: 78%; transform: rotate(15deg); background:#E5C1BE;"></span>
-  <span class="pile-petal" style="left: 85%; transform: rotate(-25deg); background:#F0D9D2;"></span>
-  <span class="pile-petal" style="left: 92%; transform: rotate(30deg); background:#D9A9A8;"></span>
+  <!-- Back / scattered petals -->
 
-  <!-- Second layer -->
-  <span class="pile-petal" style="left: 12%; bottom:12px; transform: rotate(-20deg); background:#E5C1BE;"></span>
-  <span class="pile-petal" style="left: 27%; bottom:10px; transform: rotate(35deg); background:#D9A9A8;"></span>
-  <span class="pile-petal" style="left: 42%; bottom:14px; transform: rotate(-25deg); background:#C98F91;"></span>
-  <span class="pile-petal" style="left: 58%; bottom:9px; transform: rotate(25deg); background:#F0D9D2;"></span>
-  <span class="pile-petal" style="left: 73%; bottom:13px; transform: rotate(-35deg); background:#E5C1BE;"></span>
-  <span class="pile-petal" style="left: 88%; bottom:10px; transform: rotate(20deg); background:#D9A9A8;"></span>
+  <span class="pile-petal"
+    style="left:8%; bottom:8px; transform:rotate(22deg) scale(.75); background:#E5C1BE;">
+  </span>
+
+  <span class="pile-petal"
+    style="left:14%; bottom:13px; transform:rotate(-35deg) scale(.9); background:#D9A9A8;">
+  </span>
+
+  <span class="pile-petal"
+    style="left:21%; bottom:7px; transform:rotate(48deg) scale(.7); background:#F0D9D2;">
+  </span>
+
+  <span class="pile-petal"
+    style="left:28%; bottom:17px; transform:rotate(-20deg) scale(.85); background:#C98F91;">
+  </span>
+
+
+  <!-- Middle pile -->
+
+  <span class="pile-petal"
+    style="left:34%; bottom:8px; transform:rotate(30deg); background:#D9A9A8;">
+  </span>
+
+  <span class="pile-petal"
+    style="left:39%; bottom:18px; transform:rotate(-42deg) scale(.9); background:#E5C1BE;">
+  </span>
+
+  <span class="pile-petal"
+    style="left:44%; bottom:9px; transform:rotate(15deg) scale(1.1); background:#C98F91;">
+  </span>
+
+  <span class="pile-petal"
+    style="left:48%; bottom:27px; transform:rotate(-28deg) scale(.8); background:#F0D9D2;">
+  </span>
+
+  <span class="pile-petal"
+    style="left:52%; bottom:13px; transform:rotate(38deg) scale(1.15); background:#D9A9A8;">
+  </span>
+
+  <span class="pile-petal"
+    style="left:57%; bottom:22px; transform:rotate(-18deg) scale(.85); background:#E5C1BE;">
+  </span>
+
+  <span class="pile-petal"
+    style="left:62%; bottom:9px; transform:rotate(47deg); background:#C98F91;">
+  </span>
+
+
+  <!-- Outer layer -->
+
+  <span class="pile-petal"
+    style="left:68%; bottom:17px; transform:rotate(-32deg) scale(.8); background:#F0D9D2;">
+  </span>
+
+  <span class="pile-petal"
+    style="left:75%; bottom:7px; transform:rotate(25deg) scale(.9); background:#D9A9A8;">
+  </span>
+
+  <span class="pile-petal"
+    style="left:82%; bottom:14px; transform:rotate(-45deg) scale(.75); background:#E5C1BE;">
+  </span>
+
+  <span class="pile-petal"
+    style="left:89%; bottom:6px; transform:rotate(35deg) scale(.8); background:#C98F91;">
+  </span>
+
+
+  <!-- Top petals -->
+
+  <span class="pile-petal"
+    style="left:42%; bottom:35px; transform:rotate(25deg) scale(.65); background:#F0D9D2;">
+  </span>
+
+  <span class="pile-petal"
+    style="left:47%; bottom:42px; transform:rotate(-38deg) scale(.7); background:#D9A9A8;">
+  </span>
+
+  <span class="pile-petal"
+    style="left:53%; bottom:37px; transform:rotate(18deg) scale(.75); background:#E5C1BE;">
+  </span>
+
+  <span class="pile-petal"
+    style="left:58%; bottom:31px; transform:rotate(-25deg) scale(.65); background:#C98F91;">
+  </span>
 
 </div>
+
 
 <footer>
   With love, Diva ♡
