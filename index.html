@@ -18,6 +18,74 @@
   }
 
   /* CSS website kamu yang lain... */
+/* 🌸 Opening Screen */
+#openingScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(45, 25, 35, 0.38),
+      rgba(45, 25, 35, 0.48)
+    ),
+    url("hero.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  color: #FFF4EE;
+  cursor: pointer;
+
+  transition: opacity 1.2s ease, visibility 1.2s ease;
+}
+
+#openingScreen.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.opening-content {
+  text-shadow: 0 3px 15px rgba(60, 35, 45, 0.5);
+}
+
+.opening-small {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.opening-title {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(50px, 9vw, 80px);
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.opening-enter {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  letter-spacing: 3px;
+  animation: gentlePulse 2s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
 
       #musicButton {
   position: fixed;
@@ -322,6 +390,24 @@
 </head>
 
 <body>
+
+  <div id="openingScreen" onclick="enterInvitation()">
+  <div class="opening-content">
+
+    <div class="opening-small">
+      You're Invited
+    </div>
+
+    <div class="opening-title">
+      Diva's Sweet 17
+    </div>
+
+    <div class="opening-enter">
+      Tap to Enter ♡
+    </div>
+
+  </div>
+</div>
   
   <button id="musicButton" onclick="toggleMusic()">♫ Music</button>
           <audio id="bgMusic" loop>
@@ -644,6 +730,15 @@ setInterval(createPetal, 650);
 
     const bgMusic = document.getElementById("bgMusic");
 const musicButton = document.getElementById("musicButton");
+    function enterInvitation() {
+  bgMusic.play();
+
+  document
+    .getElementById("openingScreen")
+    .classList.add("hide");
+
+  musicButton.textContent = "♫ Music ON";
+}
 
 function toggleMusic() {
   if (bgMusic.paused) {
