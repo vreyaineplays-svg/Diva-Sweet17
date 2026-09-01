@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +9,11 @@
 
   <title>Diva's Sweet 17</title>
 
-  <!-- Google Fonts -->
+
+  <!-- ═══════════════════════════════
+       GOOGLE FONTS
+       ═══════════════════════════════ -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -18,7 +22,12 @@
     rel="stylesheet"
   >
 
+
   <style>
+
+    /* ═══════════════════════════════
+       RESET
+       ═══════════════════════════════ */
 
     * {
       box-sizing: border-box;
@@ -26,271 +35,6 @@
       padding: 0;
     }
 
-
-    /* ═══════════════════════════════
-       ✦ OPENING SCREEN ✦
-       ═══════════════════════════════ */
-
-    #openingScreen {
-      position: fixed;
-      inset: 0;
-      z-index: 20000;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      background: #fbf5ef;
-      color: #9b686b;
-
-      cursor: pointer;
-
-      transition:
-        opacity 1.2s ease,
-        visibility 1.2s ease;
-    }
-
-
-    #openingScreen.hide {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-
-    .opening-content {
-      width: min(88%, 900px);
-      min-height: 80vh;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      text-align: center;
-
-      border: 1px solid #dfb8a9;
-
-      position: relative;
-
-      padding: 60px 25px;
-    }
-
-
-    /* Inner decorative border */
-
-    .opening-content::before {
-      content: "";
-
-      position: absolute;
-      inset: 12px;
-
-      border: 1px solid rgba(223, 184, 169, 0.55);
-
-      pointer-events: none;
-    }
-
-
-    /* Crown */
-
-    .opening-crown {
-      font-size: 30px;
-
-      color: #b98578;
-
-      margin-bottom: 20px;
-
-      line-height: 1;
-    }
-
-
-    /* Diva's */
-
-    .opening-title {
-      font-family: "Great Vibes", cursive;
-
-      font-size: clamp(70px, 11vw, 125px);
-
-      font-weight: normal;
-
-      line-height: 1;
-
-      color: #a86f73;
-
-      margin-bottom: 18px;
-    }
-
-
-    /* Sweet Seventeen */
-
-    .opening-subtitle {
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: clamp(15px, 2vw, 21px);
-
-      letter-spacing: 7px;
-
-      text-transform: uppercase;
-
-      color: #996d6d;
-
-      margin-bottom: 35px;
-    }
-
-
-    /* Decorative divider */
-
-    .opening-divider {
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      gap: 15px;
-
-      margin-bottom: 35px;
-    }
-
-
-    .opening-divider .line {
-      width: 80px;
-
-      height: 1px;
-
-      background: #d5a49a;
-    }
-
-
-    .opening-divider .ornament {
-      font-size: 18px;
-
-      color: #bd897b;
-    }
-
-
-    /* Tap to enter */
-
-    #enterButton {
-      border: none;
-
-      background: transparent;
-
-      font-family: "Cormorant Garamond", serif;
-
-      font-size: 17px;
-
-      letter-spacing: 4px;
-
-      text-transform: uppercase;
-
-      color: #9b686b;
-
-      cursor: pointer;
-
-      padding: 12px 20px;
-
-      animation: gentlePulse 2.2s ease-in-out infinite;
-    }
-
-
-    #enterButton:hover {
-      opacity: 0.7;
-    }
-
-
-    #enterButton:focus {
-      outline: none;
-    }
-
-
-    @keyframes gentlePulse {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0.55;
-      }
-
-    }
-
-
-    /* Mobile */
-
-    @media (max-width: 600px) {
-
-      .opening-content {
-        min-height: 75vh;
-
-        padding: 45px 20px;
-      }
-
-      .opening-content::before {
-        inset: 9px;
-      }
-
-      .opening-title {
-        font-size: 70px;
-      }
-
-      .opening-subtitle {
-        letter-spacing: 4px;
-      }
-
-      .opening-divider .line {
-        width: 55px;
-      }
-
-    }
-
-
-    /* ═══════════════════════════════
-       🌸 FALLING FLOWER PETALS
-       ═══════════════════════════════ */
-
-    .petal {
-      position: fixed;
-
-      top: -30px;
-
-      width: 12px;
-      height: 8px;
-
-      border-radius: 100% 0 100% 0;
-
-      pointer-events: none;
-
-      z-index: 9999;
-
-      opacity: 0.7;
-
-      animation: petalFall 8s linear forwards;
-    }
-
-
-    @keyframes petalFall {
-
-      from {
-        transform:
-          translateY(-30px)
-          rotate(0deg);
-      }
-
-      to {
-        transform:
-          translateY(110vh)
-          rotate(360deg);
-      }
-
-    }
-
-
-    /* ═══════════════════════════════
-       GENERAL
-       ═══════════════════════════════ */
 
     html {
       scroll-behavior: smooth;
@@ -309,6 +53,290 @@
       color: #3d3028;
 
       line-height: 1.6;
+
+      overflow-x: hidden;
+    }
+
+
+    /* ═══════════════════════════════
+       ✦ OPENING SCREEN
+       ═══════════════════════════════ */
+
+    #openingScreen {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 20000;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background: #fbf5ef;
+
+      color: #9b686b;
+
+      cursor: pointer;
+
+      transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
+    }
+
+
+    #openingScreen.hide {
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+    }
+
+
+    .opening-content {
+
+      width: min(88%, 900px);
+
+      min-height: 80vh;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      border:
+        1px solid
+        #dfb8a9;
+
+      position: relative;
+
+      padding: 60px 25px;
+    }
+
+
+    /* Inner decorative border */
+
+    .opening-content::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 12px;
+
+      border:
+        1px solid
+        rgba(223, 184, 169, 0.55);
+
+      pointer-events: none;
+    }
+
+
+    /* Crown */
+
+    .opening-crown {
+
+      font-size: 30px;
+
+      color: #b98578;
+
+      margin-bottom: 20px;
+
+      line-height: 1;
+    }
+
+
+    /* Diva's */
+
+    .opening-title {
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size:
+        clamp(70px, 11vw, 125px);
+
+      font-weight: normal;
+
+      line-height: 1;
+
+      color: #a86f73;
+
+      margin-bottom: 18px;
+    }
+
+
+    /* Sweet Seventeen */
+
+    .opening-subtitle {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(15px, 2vw, 21px);
+
+      letter-spacing: 7px;
+
+      text-transform: uppercase;
+
+      color: #996d6d;
+
+      margin-bottom: 35px;
+    }
+
+
+    /* Divider */
+
+    .opening-divider {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 15px;
+
+      margin-bottom: 35px;
+    }
+
+
+    .opening-divider .line {
+
+      width: 80px;
+
+      height: 1px;
+
+      background: #d5a49a;
+    }
+
+
+    .opening-divider .ornament {
+
+      font-size: 18px;
+
+      color: #bd897b;
+    }
+
+
+    /* Tap to Enter */
+
+    #enterButton {
+
+      border: none;
+
+      background: transparent;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 17px;
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+
+      color: #9b686b;
+
+      cursor: pointer;
+
+      padding: 12px 20px;
+
+      animation:
+        gentlePulse
+        2.2s
+        ease-in-out
+        infinite;
+    }
+
+
+    #enterButton:hover {
+
+      opacity: 0.7;
+    }
+
+
+    #enterButton:focus {
+
+      outline: none;
+    }
+
+
+    @keyframes gentlePulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.55;
+      }
+
+    }
+
+
+    /* ═══════════════════════════════
+       🌸 FALLING PETALS
+       ═══════════════════════════════ */
+
+    .petal {
+
+      position: fixed;
+
+      top: -30px;
+
+      width: 12px;
+
+      height: 8px;
+
+      border-radius:
+        100% 0 100% 0;
+
+      pointer-events: none;
+
+      z-index: 9999;
+
+      opacity: 0.7;
+
+      animation:
+        petalFall
+        8s
+        linear
+        forwards;
+    }
+
+
+    @keyframes petalFall {
+
+      from {
+
+        transform:
+          translateY(-30px)
+          rotate(0deg);
+      }
+
+      to {
+
+        transform:
+          translateY(110vh)
+          rotate(360deg);
+      }
+
     }
 
 
@@ -321,15 +349,19 @@
       position: fixed;
 
       right: 20px;
+
       bottom: 20px;
 
       z-index: 15000;
 
       padding: 10px 16px;
 
-      border: 1px solid rgba(127, 79, 89, 0.45);
+      border:
+        1px solid
+        rgba(127, 79, 89, 0.45);
 
-      background: rgba(255, 250, 246, 0.92);
+      background:
+        rgba(255, 250, 246, 0.92);
 
       color: #7F4F59;
 
@@ -350,6 +382,7 @@
 
 
     #musicButton:hover {
+
       opacity: 0.75;
     }
 
@@ -379,7 +412,9 @@
           rgba(45, 25, 35, 0.42)
         ),
 
-        url("ChatGPT Image Aug 31, 2026 at 06_24_03 PM.png");
+        url(
+          "ChatGPT Image Aug 31, 2026 at 06_24_03 PM.png"
+        );
 
       background-size: cover;
 
@@ -464,7 +499,8 @@
 
       padding: 13px 28px;
 
-      border: 1px solid white;
+      border:
+        1px solid white;
 
       color: white;
 
@@ -483,7 +519,7 @@
 
 
     /* ═══════════════════════════════
-       SECTIONS
+       GENERAL SECTIONS
        ═══════════════════════════════ */
 
     .section {
@@ -620,16 +656,19 @@
 
 
     .dress-code h2 {
+
       color: #7F4F59;
     }
 
 
     .dress-code .section-label {
+
       color: #7F4F59;
     }
 
 
     .dress-code p {
+
       color: #6F4B52;
     }
 
@@ -810,16 +849,53 @@
 
     }
 
+
+    @media (max-width: 600px) {
+
+      .opening-content {
+
+        min-height: 75vh;
+
+        padding: 45px 20px;
+      }
+
+
+      .opening-content::before {
+
+        inset: 9px;
+      }
+
+
+      .opening-title {
+
+        font-size: 70px;
+      }
+
+
+      .opening-subtitle {
+
+        letter-spacing: 4px;
+      }
+
+
+      .opening-divider .line {
+
+        width: 55px;
+      }
+
+    }
+
   </style>
 
 </head>
+
 
 
 <body>
 
 
   <!-- ═══════════════════════════════
-       ✦ OPENING SCREEN ✦
+       ✦ OPENING SCREEN
        ═══════════════════════════════ -->
 
   <div id="openingScreen">
@@ -830,13 +906,16 @@
         ♕
       </div>
 
+
       <div class="opening-title">
         Diva's
       </div>
 
+
       <div class="opening-subtitle">
         Sweet Seventeen Birthday Party
       </div>
+
 
       <div class="opening-divider">
 
@@ -850,7 +929,11 @@
 
       </div>
 
-      <button id="enterButton">
+
+      <button
+        id="enterButton"
+        type="button"
+      >
         Tap to Enter ♡
       </button>
 
@@ -864,7 +947,11 @@
        🎵 BACKGROUND MUSIC
        ═══════════════════════════════ -->
 
-  <audio id="bgMusic" loop>
+  <audio
+    id="bgMusic"
+    loop
+    preload="auto"
+  >
 
     <source
       src="A little sprinkle of happiness.mp3"
@@ -876,14 +963,14 @@
 
 
   <!-- ═══════════════════════════════
-       🎵 MUSIC CONTROL
+       🎵 MUSIC BUTTON
        ═══════════════════════════════ -->
 
   <button
     id="musicButton"
     type="button"
   >
-    ♫ Music OFF
+    ♫ Music
   </button>
 
 
@@ -896,9 +983,11 @@
 
     <div class="hero-content">
 
+
       <div class="small-title">
         You're Invited
       </div>
+
 
       <h1>
 
@@ -912,9 +1001,11 @@
 
       </h1>
 
+
       <p>
         A little celebration for a very special day.
       </p>
+
 
       <a
         href="#rsvp"
@@ -922,6 +1013,7 @@
       >
         RSVP
       </a>
+
 
     </div>
 
@@ -941,14 +1033,18 @@
         A Special Day
       </div>
 
+
       <h2>
         Come celebrate with me.
       </h2>
 
+
       <p>
+
         I'd love to have you there to celebrate another year,
         make some memories, eat good food, and have a wonderful
         time together.
+
       </p>
 
     </div>
@@ -1033,6 +1129,7 @@
 
           </p>
 
+
           <p
             style="
               font-size: 13px;
@@ -1064,17 +1161,21 @@
 
       <div class="rsvp-title">
 
+
         <div class="section-label">
           Dress Code
         </div>
+
 
         <h2>
           Pink Tones
         </h2>
 
+
         <p style="margin-top: 15px;">
           Blush • Dusty Rose • Mauve • Soft Pink
         </p>
+
 
         <p
           style="
@@ -1086,7 +1187,9 @@
           Please avoid white & ivory.
         </p>
 
+
         <div class="ribbon-line"></div>
+
 
       </div>
 
@@ -1106,6 +1209,7 @@
   >
 
     <div class="container">
+
 
       <div class="rsvp-title">
 
@@ -1132,6 +1236,7 @@
             YOUR NAME
           </label>
 
+
           <input
             type="text"
             id="name"
@@ -1152,6 +1257,7 @@
             ATTENDANCE
           </label>
 
+
           <select
             id="attendance"
             name="attendance"
@@ -1166,9 +1272,11 @@
               Select your answer
             </option>
 
+
             <option value="Yes">
               Yes, I'll be there!
             </option>
+
 
             <option value="No">
               Sorry, I can't make it.
@@ -1187,6 +1295,7 @@
           <label for="food">
             FOOD
           </label>
+
 
           <input
             type="text"
@@ -1208,6 +1317,7 @@
             DRINK
           </label>
 
+
           <select
             id="drink"
             name="drink"
@@ -1222,13 +1332,16 @@
               Choose your drink
             </option>
 
+
             <option value="Iced Tea">
               🧊 Iced Tea
             </option>
 
+
             <option value="Hot Tea">
               ☕ Hot Tea
             </option>
+
 
             <option value="Lemon Tea">
               🍋 Lemon Tea
@@ -1247,6 +1360,7 @@
           <label for="note">
             NOTE
           </label>
+
 
           <textarea
             id="note"
@@ -1298,34 +1412,292 @@
 
 
     /* ═══════════════════════════════
-       GOOGLE SHEETS RSVP
+       ✦ FORCE PAGE TO START AT TOP
+       ═══════════════════════════════ */
+
+    if ("scrollRestoration" in history) {
+
+      history.scrollRestoration = "manual";
+
+    }
+
+
+    window.addEventListener(
+      "load",
+      function() {
+
+        window.scrollTo(0, 0);
+
+      }
+    );
+
+
+
+    /* ═══════════════════════════════
+       ✦ ELEMENTS
+       ═══════════════════════════════ */
+
+    const openingScreen =
+      document.getElementById(
+        "openingScreen"
+      );
+
+
+    const enterButton =
+      document.getElementById(
+        "enterButton"
+      );
+
+
+    const bgMusic =
+      document.getElementById(
+        "bgMusic"
+      );
+
+
+    const musicButton =
+      document.getElementById(
+        "musicButton"
+      );
+
+
+    const form =
+      document.getElementById(
+        "rsvpForm"
+      );
+
+
+    const button =
+      document.getElementById(
+        "submitButton"
+      );
+
+
+    const status =
+      document.getElementById(
+        "status"
+      );
+
+
+
+    /* ═══════════════════════════════
+       ✦ LOCK SCROLL WHILE OPENING
+       ═══════════════════════════════ */
+
+    document.body.style.overflow = "hidden";
+
+
+
+    /* ═══════════════════════════════
+       ✦ ENTER INVITATION
+       ═══════════════════════════════ */
+
+    enterButton.addEventListener(
+      "click",
+      function(event) {
+
+        event.preventDefault();
+
+        event.stopPropagation();
+
+
+        /*
+         * Unlock page scrolling
+         */
+
+        document.body.style.overflow = "";
+
+
+        /*
+         * Hide opening screen
+         */
+
+        openingScreen.classList.add(
+          "hide"
+        );
+
+
+        /*
+         * Start music after
+         * user interaction
+         */
+
+        bgMusic
+          .play()
+          .then(function() {
+
+            musicButton.textContent =
+              "♫ Music ON";
+
+          })
+          .catch(function(error) {
+
+            console.log(
+              "Music could not start:",
+              error
+            );
+
+
+            musicButton.textContent =
+              "♫ Music";
+
+          });
+
+      }
+    );
+
+
+
+    /* ═══════════════════════════════
+       ✦ MUSIC BUTTON
+       ═══════════════════════════════ */
+
+    musicButton.addEventListener(
+      "click",
+      function() {
+
+
+        if (bgMusic.paused) {
+
+
+          bgMusic
+            .play()
+            .then(function() {
+
+              musicButton.textContent =
+                "♫ Music ON";
+
+            })
+            .catch(function(error) {
+
+              console.log(
+                "Music could not start:",
+                error
+              );
+
+            });
+
+
+        }
+
+        else {
+
+
+          bgMusic.pause();
+
+
+          musicButton.textContent =
+            "♫ Music OFF";
+
+
+        }
+
+      }
+    );
+
+
+
+    /* ═══════════════════════════════
+       🌸 FALLING PETALS
+       ═══════════════════════════════ */
+
+    const petalColors = [
+
+      "#D9A9A8",
+      "#C98F91",
+      "#E5C1BE",
+      "#F0D9D2"
+
+    ];
+
+
+    function createPetal() {
+
+
+      const petal =
+        document.createElement(
+          "div"
+        );
+
+
+      petal.className =
+        "petal";
+
+
+      petal.style.left =
+        Math.random() * 100 + "vw";
+
+
+      petal.style.width =
+        (6 + Math.random() * 14) +
+        "px";
+
+
+      petal.style.height =
+        (4 + Math.random() * 9) +
+        "px";
+
+
+      petal.style.background =
+        petalColors[
+          Math.floor(
+            Math.random() *
+            petalColors.length
+          )
+        ];
+
+
+      petal.style.animationDuration =
+        (7 + Math.random() * 6) +
+        "s";
+
+
+      document.body.appendChild(
+        petal
+      );
+
+
+      setTimeout(
+        function() {
+
+          petal.remove();
+
+        },
+        15000
+      );
+
+    }
+
+
+    setInterval(
+      createPetal,
+      650
+    );
+
+
+
+    /* ═══════════════════════════════
+       RSVP → GOOGLE SHEETS
        ═══════════════════════════════ */
 
     const SCRIPT_URL =
       "https://script.google.com/macros/s/AKfycbzPmh7UWf86L90yNUIox9L6huCfDcbVi0wgOBq64ZnfBbaeSk1KRvXyF4acis0b9jcY/exec";
 
 
-    const form =
-      document.getElementById("rsvpForm");
-
-    const button =
-      document.getElementById("submitButton");
-
-    const status =
-      document.getElementById("status");
-
-
     form.addEventListener(
       "submit",
       async function(event) {
+
 
         event.preventDefault();
 
 
         button.disabled = true;
 
+
         button.textContent =
           "SENDING...";
+
 
         status.textContent = "";
 
@@ -1333,19 +1705,29 @@
         const data = {
 
           name:
-            document.getElementById("name").value,
+            document.getElementById(
+              "name"
+            ).value,
 
           attendance:
-            document.getElementById("attendance").value,
+            document.getElementById(
+              "attendance"
+            ).value,
 
           food:
-            document.getElementById("food").value,
+            document.getElementById(
+              "food"
+            ).value,
 
           drink:
-            document.getElementById("drink").value,
+            document.getElementById(
+              "drink"
+            ).value,
 
           note:
-            document.getElementById("note").value
+            document.getElementById(
+              "note"
+            ).value
 
         };
 
@@ -1400,185 +1782,9 @@
 
         button.disabled = false;
 
+
         button.textContent =
           "SEND RSVP";
-
-
-      }
-    );
-
-
-
-    /* ═══════════════════════════════
-       🌸 FALLING FLOWER PETALS
-       ═══════════════════════════════ */
-
-    const petalColors = [
-
-      "#D9A9A8",
-      "#C98F91",
-      "#E5C1BE",
-      "#F0D9D2"
-
-    ];
-
-
-    function createPetal() {
-
-
-      const petal =
-        document.createElement("div");
-
-
-      petal.className =
-        "petal";
-
-
-      petal.style.left =
-        Math.random() * 100 + "vw";
-
-
-      petal.style.width =
-        (6 + Math.random() * 14) + "px";
-
-
-      petal.style.height =
-        (4 + Math.random() * 9) + "px";
-
-
-      petal.style.background =
-        petalColors[
-          Math.floor(
-            Math.random() *
-            petalColors.length
-          )
-        ];
-
-
-      petal.style.animationDuration =
-        (7 + Math.random() * 6) + "s";
-
-
-      document.body.appendChild(petal);
-
-
-      setTimeout(
-        () => {
-          petal.remove();
-        },
-        15000
-      );
-
-
-    }
-
-
-    setInterval(
-      createPetal,
-      650
-    );
-
-
-
-    /* ═══════════════════════════════
-       🎵 OPENING + MUSIC
-       ═══════════════════════════════ */
-
-    const bgMusic =
-      document.getElementById("bgMusic");
-
-
-    const openingScreen =
-      document.getElementById("openingScreen");
-
-
-    const enterButton =
-      document.getElementById("enterButton");
-
-
-    const musicButton =
-      document.getElementById("musicButton");
-
-
-
-    /* ENTER INVITATION */
-
-    enterButton.addEventListener(
-      "click",
-      function(event) {
-
-
-        event.stopPropagation();
-
-
-        bgMusic
-          .play()
-          .then(
-            function() {
-
-              musicButton.textContent =
-                "♫ Music ON";
-
-            }
-          )
-          .catch(
-            function(error) {
-
-              console.log(
-                "Music could not start:",
-                error
-              );
-
-            }
-          );
-
-
-        openingScreen.classList.add(
-          "hide"
-        );
-
-
-      }
-    );
-
-
-
-    /* MUSIC TOGGLE */
-
-    musicButton.addEventListener(
-      "click",
-      function() {
-
-
-        if (bgMusic.paused) {
-
-
-          bgMusic
-            .play()
-            .then(
-              function() {
-
-                musicButton.textContent =
-                  "♫ Music ON";
-
-              }
-            );
-
-
-        }
-
-
-        else {
-
-
-          bgMusic.pause();
-
-
-          musicButton.textContent =
-            "♫ Music OFF";
-
-
-        }
 
 
       }
@@ -1591,4 +1797,4 @@
 </body>
 
 </html>
-
+```
