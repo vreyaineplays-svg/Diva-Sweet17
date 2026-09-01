@@ -18,6 +18,167 @@
   }
 
   /* CSS website kamu yang lain... */
+      /* ═══════════════════════════════
+   ✦ OPENING SCREEN ✦
+   ═══════════════════════════════ */
+
+#openingScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fbf5ef;
+  color: #9b686b;
+
+  cursor: pointer;
+
+  transition:
+    opacity 1.2s ease,
+    visibility 1.2s ease;
+}
+
+#openingScreen.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.opening-content {
+  width: min(88%, 900px);
+  min-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  border: 1px solid #dfb8a9;
+  position: relative;
+
+  padding: 60px 25px;
+}
+
+/* Inner decorative border */
+.opening-content::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+
+  border: 1px solid rgba(223, 184, 169, 0.55);
+
+  pointer-events: none;
+}
+
+/* Crown */
+.opening-crown {
+  font-size: 30px;
+  color: #b98578;
+  margin-bottom: 20px;
+
+  line-height: 1;
+}
+
+/* Diva's */
+.opening-title {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(70px, 11vw, 125px);
+  font-weight: normal;
+  line-height: 1;
+
+  color: #a86f73;
+
+  margin-bottom: 18px;
+}
+
+/* Sweet Seventeen */
+.opening-subtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(15px, 2vw, 21px);
+
+  letter-spacing: 7px;
+  text-transform: uppercase;
+
+  color: #996d6d;
+
+  margin-bottom: 35px;
+}
+
+/* Decorative line */
+.opening-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-bottom: 35px;
+}
+
+.opening-divider .line {
+  width: 80px;
+  height: 1px;
+
+  background: #d5a49a;
+}
+
+.opening-divider .ornament {
+  font-size: 18px;
+  color: #bd897b;
+}
+
+/* Tap to enter */
+.opening-enter {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 17px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+
+  color: #9b686b;
+
+  animation: gentlePulse 2.2s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .opening-content {
+    min-height: 75vh;
+    padding: 45px 20px;
+  }
+
+  .opening-content::before {
+    inset: 9px;
+  }
+
+  .opening-title {
+    font-size: 70px;
+  }
+
+  .opening-subtitle {
+    letter-spacing: 4px;
+  }
+
+  .opening-divider .line {
+    width: 55px;
+  }
+}
 /* 🌸 Opening Screen */
 #openingScreen {
   position: fixed;
@@ -390,6 +551,44 @@
 </head>
 
 <body>
+  <!-- ✦ OPENING SCREEN ✦ -->
+
+<div id="openingScreen">
+
+  <div class="opening-content">
+
+    <div class="opening-crown">
+      ♕
+    </div>
+
+    <div class="opening-title">
+      Diva's
+    </div>
+
+    <div class="opening-subtitle">
+      Sweet Seventeen Birthday Party
+    </div>
+
+    <div class="opening-divider">
+      <span class="line"></span>
+      <span class="ornament">✦</span>
+      <span class="line"></span>
+    </div>
+
+    <div class="opening-enter">
+      Tap to Enter ♡
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- 🎵 Background Music -->
+
+<audio id="bgMusic" loop>
+  <source src="A sprinkle of happiness.mp3" type="audio/mpeg">
+</audio>
 
   <div id="openingScreen" onclick="enterInvitation()">
   <div class="opening-content">
@@ -749,7 +948,22 @@ function toggleMusic() {
     musicButton.textContent = "♫ Music OFF";
   }
 }
+// ═══════════════════════════════
+// ✦ OPENING + BACKGROUND MUSIC ✦
+// ═══════════════════════════════
 
+const bgMusic = document.getElementById("bgMusic");
+const openingScreen = document.getElementById("openingScreen");
+
+openingScreen.addEventListener("click", function () {
+
+  // Start music
+  bgMusic.play();
+
+  // Fade out opening
+  openingScreen.classList.add("hide");
+
+});
 
   </script>
 
