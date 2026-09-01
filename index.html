@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,11 +8,7 @@
 
   <title>Diva's Sweet 17</title>
 
-
-  <!-- ═══════════════════════════════
-       GOOGLE FONTS
-       ═══════════════════════════════ -->
-
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -21,7 +16,6 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap"
     rel="stylesheet"
   >
-
 
   <style>
 
@@ -35,25 +29,15 @@
       padding: 0;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
 
-
     body {
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+      font-family: Georgia, "Times New Roman", serif;
       background: #f8f3ea;
-
       color: #3d3028;
-
       line-height: 1.6;
-
       overflow-x: hidden;
     }
 
@@ -63,21 +47,15 @@
        ═══════════════════════════════ */
 
     #openingScreen {
-
       position: fixed;
-
       inset: 0;
-
       z-index: 20000;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       background: #fbf5ef;
-
       color: #9b686b;
 
       cursor: pointer;
@@ -87,51 +65,34 @@
         visibility 1.2s ease;
     }
 
-
     #openingScreen.hide {
-
       opacity: 0;
-
       visibility: hidden;
-
       pointer-events: none;
     }
 
-
     .opening-content {
-
       width: min(88%, 900px);
-
       min-height: 80vh;
 
       display: flex;
-
       flex-direction: column;
-
       align-items: center;
-
       justify-content: center;
 
       text-align: center;
 
-      border:
-        1px solid
-        #dfb8a9;
+      border: 1px solid #dfb8a9;
 
       position: relative;
 
       padding: 60px 25px;
     }
 
-
-    /* Inner decorative border */
-
     .opening-content::before {
-
       content: "";
 
       position: absolute;
-
       inset: 12px;
 
       border:
@@ -141,28 +102,15 @@
       pointer-events: none;
     }
 
-
-    /* Crown */
-
     .opening-crown {
-
       font-size: 30px;
-
       color: #b98578;
-
       margin-bottom: 20px;
-
       line-height: 1;
     }
 
-
-    /* Diva's */
-
     .opening-title {
-
-      font-family:
-        "Great Vibes",
-        cursive;
+      font-family: "Great Vibes", cursive;
 
       font-size:
         clamp(70px, 11vw, 125px);
@@ -176,11 +124,7 @@
       margin-bottom: 18px;
     }
 
-
-    /* Sweet Seventeen */
-
     .opening-subtitle {
-
       font-family:
         "Cormorant Garamond",
         serif;
@@ -197,15 +141,10 @@
       margin-bottom: 35px;
     }
 
-
-    /* Divider */
-
     .opening-divider {
-
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       gap: 15px;
@@ -213,29 +152,19 @@
       margin-bottom: 35px;
     }
 
-
     .opening-divider .line {
-
       width: 80px;
-
       height: 1px;
 
       background: #d5a49a;
     }
 
-
     .opening-divider .ornament {
-
       font-size: 18px;
-
       color: #bd897b;
     }
 
-
-    /* Tap to Enter */
-
     #enterButton {
-
       border: none;
 
       background: transparent;
@@ -263,18 +192,13 @@
         infinite;
     }
 
-
     #enterButton:hover {
-
       opacity: 0.7;
     }
 
-
     #enterButton:focus {
-
       outline: none;
     }
-
 
     @keyframes gentlePulse {
 
@@ -295,13 +219,11 @@
        ═══════════════════════════════ */
 
     .petal {
-
       position: fixed;
 
       top: -30px;
 
       width: 12px;
-
       height: 8px;
 
       border-radius:
@@ -320,18 +242,15 @@
         forwards;
     }
 
-
     @keyframes petalFall {
 
       from {
-
         transform:
           translateY(-30px)
           rotate(0deg);
       }
 
       to {
-
         transform:
           translateY(110vh)
           rotate(360deg);
@@ -345,11 +264,9 @@
        ═══════════════════════════════ */
 
     #musicButton {
-
       position: fixed;
 
       right: 20px;
-
       bottom: 20px;
 
       z-index: 15000;
@@ -380,9 +297,7 @@
       transition: 0.3s;
     }
 
-
     #musicButton:hover {
-
       opacity: 0.75;
     }
 
@@ -392,13 +307,11 @@
        ═══════════════════════════════ */
 
     .hero {
-
       min-height: 100vh;
 
       display: flex;
 
       align-items: center;
-
       justify-content: center;
 
       text-align: center;
@@ -423,17 +336,12 @@
       background-repeat: no-repeat;
     }
 
-
     .hero-content {
-
       max-width: 750px;
-
       color: white;
     }
 
-
     .small-title {
-
       font-size: 14px;
 
       letter-spacing: 5px;
@@ -443,9 +351,7 @@
       margin-bottom: 20px;
     }
 
-
     .hero h1 {
-
       font-family:
         "Cormorant Garamond",
         serif;
@@ -466,9 +372,7 @@
         rgba(60, 35, 45, 0.5);
     }
 
-
     .hero-script {
-
       font-family:
         "Great Vibes",
         cursive;
@@ -482,17 +386,12 @@
       margin-bottom: 8px;
     }
 
-
     .hero p {
-
       font-size: 18px;
-
       letter-spacing: 2px;
     }
 
-
     .scroll-button {
-
       display: inline-block;
 
       margin-top: 40px;
@@ -509,11 +408,8 @@
       transition: 0.3s;
     }
 
-
     .scroll-button:hover {
-
       background: white;
-
       color: #3d3028;
     }
 
@@ -523,27 +419,19 @@
        ═══════════════════════════════ */
 
     .section {
-
       padding: 90px 20px;
     }
 
-
     .container {
-
       max-width: 900px;
-
       margin: auto;
     }
 
-
     .intro {
-
       text-align: center;
     }
 
-
     .section-label {
-
       font-size: 12px;
 
       letter-spacing: 4px;
@@ -555,9 +443,7 @@
       opacity: 0.7;
     }
 
-
     .intro h2 {
-
       font-size: 42px;
 
       font-weight: normal;
@@ -565,9 +451,7 @@
       margin-bottom: 25px;
     }
 
-
     .intro p {
-
       max-width: 650px;
 
       margin: auto;
@@ -581,13 +465,10 @@
        ═══════════════════════════════ */
 
     .details {
-
       background: #ebe2d4;
     }
 
-
     .detail-grid {
-
       display: grid;
 
       grid-template-columns:
@@ -598,9 +479,7 @@
       text-align: center;
     }
 
-
     .detail-card {
-
       padding: 30px 20px;
 
       border:
@@ -608,17 +487,13 @@
         rgba(61, 48, 40, 0.2);
     }
 
-
     .detail-card .icon {
-
       font-size: 30px;
 
       margin-bottom: 10px;
     }
 
-
     .detail-card h3 {
-
       font-size: 20px;
 
       font-weight: normal;
@@ -626,9 +501,7 @@
       margin-bottom: 8px;
     }
 
-
     .detail-card a {
-
       text-decoration: none;
     }
 
@@ -638,7 +511,6 @@
        ═══════════════════════════════ */
 
     .dress-code {
-
       background: #FFEAEA;
 
       padding: 55px 20px;
@@ -654,21 +526,15 @@
       color: #6F4B52;
     }
 
-
     .dress-code h2 {
-
       color: #7F4F59;
     }
-
 
     .dress-code .section-label {
-
       color: #7F4F59;
     }
 
-
     .dress-code p {
-
       color: #6F4B52;
     }
 
@@ -678,37 +544,28 @@
        ═══════════════════════════════ */
 
     .rsvp-title {
-
       text-align: center;
 
       margin-bottom: 45px;
     }
 
-
     .rsvp-title h2 {
-
       font-size: 45px;
 
       font-weight: normal;
     }
 
-
     form {
-
       max-width: 650px;
 
       margin: auto;
     }
 
-
     .form-group {
-
       margin-bottom: 25px;
     }
 
-
     label {
-
       display: block;
 
       margin-bottom: 9px;
@@ -718,11 +575,9 @@
       letter-spacing: 1px;
     }
 
-
     input,
     select,
     textarea {
-
       width: 100%;
 
       padding: 14px 15px;
@@ -742,17 +597,13 @@
       outline: none;
     }
 
-
     textarea {
-
       min-height: 120px;
 
       resize: vertical;
     }
 
-
     .submit-button {
-
       width: 100%;
 
       padding: 16px;
@@ -772,17 +623,13 @@
       cursor: pointer;
     }
 
-
     .submit-button:disabled {
-
       opacity: 0.5;
 
       cursor: wait;
     }
 
-
     #status {
-
       text-align: center;
 
       margin-top: 20px;
@@ -796,7 +643,6 @@
        ═══════════════════════════════ */
 
     footer {
-
       text-align: center;
 
       padding: 35px 20px;
@@ -818,32 +664,23 @@
     @media (max-width: 700px) {
 
       .detail-grid {
-
         grid-template-columns: 1fr;
       }
 
-
       .section {
-
         padding: 65px 20px;
       }
 
-
       .intro h2,
       .rsvp-title h2 {
-
         font-size: 34px;
       }
 
-
       .hero h1 {
-
         font-size: 65px;
       }
 
-
       .hero p {
-
         font-size: 15px;
       }
 
@@ -853,33 +690,24 @@
     @media (max-width: 600px) {
 
       .opening-content {
-
         min-height: 75vh;
 
         padding: 45px 20px;
       }
 
-
       .opening-content::before {
-
         inset: 9px;
       }
 
-
       .opening-title {
-
         font-size: 70px;
       }
 
-
       .opening-subtitle {
-
         letter-spacing: 4px;
       }
 
-
       .opening-divider .line {
-
         width: 55px;
       }
 
@@ -888,7 +716,6 @@
   </style>
 
 </head>
-
 
 
 <body>
@@ -906,16 +733,13 @@
         ♕
       </div>
 
-
       <div class="opening-title">
         Diva's
       </div>
 
-
       <div class="opening-subtitle">
         Sweet Seventeen Birthday Party
       </div>
-
 
       <div class="opening-divider">
 
@@ -929,7 +753,6 @@
 
       </div>
 
-
       <button
         id="enterButton"
         type="button"
@@ -940,7 +763,6 @@
     </div>
 
   </div>
-
 
 
   <!-- ═══════════════════════════════
@@ -961,7 +783,6 @@
   </audio>
 
 
-
   <!-- ═══════════════════════════════
        🎵 MUSIC BUTTON
        ═══════════════════════════════ -->
@@ -974,7 +795,6 @@
   </button>
 
 
-
   <!-- ═══════════════════════════════
        ✦ HERO
        ═══════════════════════════════ -->
@@ -983,11 +803,9 @@
 
     <div class="hero-content">
 
-
       <div class="small-title">
         You're Invited
       </div>
-
 
       <h1>
 
@@ -1001,11 +819,9 @@
 
       </h1>
 
-
       <p>
         A little celebration for a very special day.
       </p>
-
 
       <a
         href="#rsvp"
@@ -1014,11 +830,9 @@
         RSVP
       </a>
 
-
     </div>
 
   </section>
-
 
 
   <!-- ═══════════════════════════════
@@ -1033,24 +847,19 @@
         A Special Day
       </div>
 
-
       <h2>
         Come celebrate with me.
       </h2>
 
-
       <p>
-
         I'd love to have you there to celebrate another year,
         make some memories, eat good food, and have a wonderful
         time together.
-
       </p>
 
     </div>
 
   </section>
-
 
 
   <!-- ═══════════════════════════════
@@ -1083,7 +892,6 @@
         </div>
 
 
-
         <!-- TIME -->
 
         <div class="detail-card">
@@ -1101,7 +909,6 @@
           </p>
 
         </div>
-
 
 
         <!-- LOCATION -->
@@ -1129,7 +936,6 @@
 
           </p>
 
-
           <p
             style="
               font-size: 13px;
@@ -1150,7 +956,6 @@
   </section>
 
 
-
   <!-- ═══════════════════════════════
        DRESS CODE
        ═══════════════════════════════ -->
@@ -1161,21 +966,17 @@
 
       <div class="rsvp-title">
 
-
         <div class="section-label">
           Dress Code
         </div>
-
 
         <h2>
           Pink Tones
         </h2>
 
-
         <p style="margin-top: 15px;">
           Blush • Dusty Rose • Mauve • Soft Pink
         </p>
-
 
         <p
           style="
@@ -1187,16 +988,13 @@
           Please avoid white & ivory.
         </p>
 
-
         <div class="ribbon-line"></div>
-
 
       </div>
 
     </div>
 
   </section>
-
 
 
   <!-- ═══════════════════════════════
@@ -1209,7 +1007,6 @@
   >
 
     <div class="container">
-
 
       <div class="rsvp-title">
 
@@ -1224,7 +1021,6 @@
       </div>
 
 
-
       <form id="rsvpForm">
 
 
@@ -1235,7 +1031,6 @@
           <label for="name">
             YOUR NAME
           </label>
-
 
           <input
             type="text"
@@ -1248,7 +1043,6 @@
         </div>
 
 
-
         <!-- ATTENDANCE -->
 
         <div class="form-group">
@@ -1256,7 +1050,6 @@
           <label for="attendance">
             ATTENDANCE
           </label>
-
 
           <select
             id="attendance"
@@ -1272,11 +1065,9 @@
               Select your answer
             </option>
 
-
             <option value="Yes">
               Yes, I'll be there!
             </option>
-
 
             <option value="No">
               Sorry, I can't make it.
@@ -1287,7 +1078,6 @@
         </div>
 
 
-
         <!-- FOOD -->
 
         <div class="form-group">
@@ -1295,7 +1085,6 @@
           <label for="food">
             FOOD
           </label>
-
 
           <input
             type="text"
@@ -1308,7 +1097,6 @@
         </div>
 
 
-
         <!-- DRINK -->
 
         <div class="form-group">
@@ -1316,7 +1104,6 @@
           <label for="drink">
             DRINK
           </label>
-
 
           <select
             id="drink"
@@ -1332,16 +1119,13 @@
               Choose your drink
             </option>
 
-
             <option value="Iced Tea">
               🧊 Iced Tea
             </option>
 
-
             <option value="Hot Tea">
               ☕ Hot Tea
             </option>
-
 
             <option value="Lemon Tea">
               🍋 Lemon Tea
@@ -1352,7 +1136,6 @@
         </div>
 
 
-
         <!-- NOTE -->
 
         <div class="form-group">
@@ -1361,7 +1144,6 @@
             NOTE
           </label>
 
-
           <textarea
             id="note"
             name="note"
@@ -1369,7 +1151,6 @@
           ></textarea>
 
         </div>
-
 
 
         <!-- SUBMIT -->
@@ -1382,16 +1163,13 @@
           SEND RSVP
         </button>
 
-
         <div id="status"></div>
-
 
       </form>
 
     </div>
 
   </section>
-
 
 
   <!-- ═══════════════════════════════
@@ -1403,23 +1181,79 @@
   </footer>
 
 
-
   <!-- ═══════════════════════════════
-       ✦ JAVASCRIPT
+       JAVASCRIPT
        ═══════════════════════════════ -->
 
   <script>
 
+    /* ═══════════════════════════════
+       ✦ ELEMENTS
+       ═══════════════════════════════ */
+
+    const openingScreen =
+      document.getElementById("openingScreen");
+
+    const enterButton =
+      document.getElementById("enterButton");
+
+    const bgMusic =
+      document.getElementById("bgMusic");
+
+    const musicButton =
+      document.getElementById("musicButton");
+
+    const form =
+      document.getElementById("rsvpForm");
+
+    const button =
+      document.getElementById("submitButton");
+
+    const status =
+      document.getElementById("status");
+
 
     /* ═══════════════════════════════
-       ✦ FORCE PAGE TO START AT TOP
+       ✦ FORCE START AT TOP
        ═══════════════════════════════ */
 
     if ("scrollRestoration" in history) {
-
       history.scrollRestoration = "manual";
+    }
+
+
+    /*
+     * Remove any #rsvp or other hash
+     * from the URL when the page opens.
+     */
+
+    if (window.location.hash) {
+
+      history.replaceState(
+        null,
+        "",
+        window.location.pathname +
+        window.location.search
+      );
 
     }
+
+
+    /*
+     * Force page to the very top.
+     */
+
+    window.scrollTo(0, 0);
+
+
+    window.addEventListener(
+      "DOMContentLoaded",
+      function() {
+
+        window.scrollTo(0, 0);
+
+      }
+    );
 
 
     window.addEventListener(
@@ -1432,54 +1266,6 @@
     );
 
 
-
-    /* ═══════════════════════════════
-       ✦ ELEMENTS
-       ═══════════════════════════════ */
-
-    const openingScreen =
-      document.getElementById(
-        "openingScreen"
-      );
-
-
-    const enterButton =
-      document.getElementById(
-        "enterButton"
-      );
-
-
-    const bgMusic =
-      document.getElementById(
-        "bgMusic"
-      );
-
-
-    const musicButton =
-      document.getElementById(
-        "musicButton"
-      );
-
-
-    const form =
-      document.getElementById(
-        "rsvpForm"
-      );
-
-
-    const button =
-      document.getElementById(
-        "submitButton"
-      );
-
-
-    const status =
-      document.getElementById(
-        "status"
-      );
-
-
-
     /* ═══════════════════════════════
        ✦ LOCK SCROLL WHILE OPENING
        ═══════════════════════════════ */
@@ -1487,9 +1273,8 @@
     document.body.style.overflow = "hidden";
 
 
-
     /* ═══════════════════════════════
-       ✦ ENTER INVITATION
+       ✦ TAP TO ENTER
        ═══════════════════════════════ */
 
     enterButton.addEventListener(
@@ -1497,33 +1282,89 @@
       function(event) {
 
         event.preventDefault();
-
         event.stopPropagation();
 
 
         /*
-         * Unlock page scrolling
+         * Temporarily disable smooth
+         * scrolling so the reset is instant.
+         */
+
+        document.documentElement.style.scrollBehavior =
+          "auto";
+
+
+        /*
+         * VERY IMPORTANT:
+         * Force the underlying page
+         * to the HERO before opening
+         * disappears.
+         */
+
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "instant"
+        });
+
+
+        /*
+         * Unlock scrolling.
          */
 
         document.body.style.overflow = "";
 
 
         /*
-         * Hide opening screen
+         * Hide opening screen.
          */
 
-        openingScreen.classList.add(
-          "hide"
-        );
+        openingScreen.classList.add("hide");
 
 
         /*
-         * Start music after
-         * user interaction
+         * Force top AGAIN after
+         * opening disappears.
          */
 
-        bgMusic
-          .play()
+        requestAnimationFrame(function() {
+
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "instant"
+          });
+
+        });
+
+
+        /*
+         * One more safety check.
+         */
+
+        setTimeout(function() {
+
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "instant"
+          });
+
+          /*
+           * Restore smooth scrolling.
+           */
+
+          document.documentElement.style.scrollBehavior =
+            "smooth";
+
+        }, 50);
+
+
+        /* ═══════════════════════════════
+           🎵 START MUSIC
+           ═══════════════════════════════ */
+
+        bgMusic.play()
           .then(function() {
 
             musicButton.textContent =
@@ -1537,7 +1378,6 @@
               error
             );
 
-
             musicButton.textContent =
               "♫ Music";
 
@@ -1547,21 +1387,17 @@
     );
 
 
-
     /* ═══════════════════════════════
-       ✦ MUSIC BUTTON
+       🎵 MUSIC CONTROL
        ═══════════════════════════════ */
 
     musicButton.addEventListener(
       "click",
       function() {
 
-
         if (bgMusic.paused) {
 
-
-          bgMusic
-            .play()
+          bgMusic.play()
             .then(function() {
 
               musicButton.textContent =
@@ -1577,24 +1413,19 @@
 
             });
 
-
         }
 
         else {
 
-
           bgMusic.pause();
-
 
           musicButton.textContent =
             "♫ Music OFF";
-
 
         }
 
       }
     );
-
 
 
     /* ═══════════════════════════════
@@ -1613,15 +1444,10 @@
 
     function createPetal() {
 
-
       const petal =
-        document.createElement(
-          "div"
-        );
+        document.createElement("div");
 
-
-      petal.className =
-        "petal";
+      petal.className = "petal";
 
 
       petal.style.left =
@@ -1675,7 +1501,6 @@
     );
 
 
-
     /* ═══════════════════════════════
        RSVP → GOOGLE SHEETS
        ═══════════════════════════════ */
@@ -1688,16 +1513,13 @@
       "submit",
       async function(event) {
 
-
         event.preventDefault();
 
 
         button.disabled = true;
 
-
         button.textContent =
           "SENDING...";
-
 
         status.textContent = "";
 
@@ -1734,7 +1556,6 @@
 
         try {
 
-
           await fetch(
             SCRIPT_URL,
             {
@@ -1763,33 +1584,26 @@
 
           form.reset();
 
-
         }
 
 
         catch (error) {
 
-
           console.error(error);
-
 
           status.textContent =
             "Something went wrong. Please try again.";
-
 
         }
 
 
         button.disabled = false;
 
-
         button.textContent =
           "SEND RSVP";
 
-
       }
     );
-
 
   </script>
 
@@ -1797,4 +1611,3 @@
 </body>
 
 </html>
-
