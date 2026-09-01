@@ -133,26 +133,30 @@
 }
 
 /* Tap to enter */
-.opening-enter {
-  font-family: "Cormorant Garamond", serif;
+#enterButton {
+  border: none;
+  background: transparent;
 
+  font-family: "Cormorant Garamond", serif;
   font-size: 17px;
   letter-spacing: 4px;
   text-transform: uppercase;
 
   color: #9b686b;
 
+  cursor: pointer;
+
+  padding: 12px 20px;
+
   animation: gentlePulse 2.2s ease-in-out infinite;
 }
 
-@keyframes gentlePulse {
-  0%, 100% {
-    opacity: 0.55;
-  }
+#enterButton:hover {
+  opacity: 0.7;
+}
 
-  50% {
-    opacity: 1;
-  }
+#enterButton:focus {
+  outline: none;
 }
 
 /* Mobile */
@@ -479,18 +483,14 @@
       }
     }
   </style>
-</head>
-
-<body>
-  <!-- ✦ OPENING SCREEN ✦ -->
+</body>
+<!-- ✦ OPENING SCREEN ✦ -->
 
 <div id="openingScreen">
 
   <div class="opening-content">
 
-    <div class="opening-crown">
-      ♕
-    </div>
+    <div class="opening-crown">♕</div>
 
     <div class="opening-title">
       Diva's
@@ -506,13 +506,17 @@
       <span class="line"></span>
     </div>
 
-    <div class="opening-enter">
+    <button id="enterButton">
       Tap to Enter ♡
-    </div>
+    </button>
 
   </div>
 
 </div>
+
+<audio id="bgMusic" loop>
+  <source src="A sprinkle of happiness.mp3" type="audio/mpeg">
+</audio>
 
 
 <!-- 🎵 Background Music -->
@@ -886,12 +890,22 @@ function toggleMusic() {
 const bgMusic = document.getElementById("bgMusic");
 const openingScreen = document.getElementById("openingScreen");
 
-openingScreen.addEventListener("click", function () {
+const bgMusic = document.getElementById("bgMusic");
+const openingScreen = document.getElementById("openingScreen");
+const enterButton = document.getElementById("enterButton");
 
-  // Start music
-  bgMusic.play();
+enterButton.addEventListener("click", function (event) {
 
-  // Fade out opening
+  event.stopPropagation();
+
+  bgMusic.play()
+    .then(() => {
+      console.log("Music started");
+    })
+    .catch((error) => {
+      console.log("Music could not start:", error);
+    });
+
   openingScreen.classList.add("hide");
 
 });
