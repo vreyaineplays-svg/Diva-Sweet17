@@ -1,1612 +1,1589 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Diva's Sweet 17</title>
+<title>Diva's Sweet 17</title>
 
-  <!-- GOOGLE FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap"
-    rel="stylesheet"
-  >
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    /* ═══════════════════════════════
-       RESET
-       ═══════════════════════════════ */
+/* =========================================
+   RESET
+========================================= */
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: #f8f3ea;
-      color: #3d3028;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #f8f3ea;
+  color: #3d3028;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
 
-    /* ═══════════════════════════════
-       ✦ OPENING SCREEN
-       ═══════════════════════════════ */
+/* =========================================
+   OPENING SCREEN
+========================================= */
 
-    #openingScreen {
-      position: fixed;
-      inset: 0;
-      z-index: 20000;
+#openingScreen {
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
 
-      background: #fbf5ef;
-      color: #9b686b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-      cursor: pointer;
+  background: #fbf5ef;
+  color: #9b686b;
 
-      transition:
-        opacity 1.2s ease,
-        visibility 1.2s ease;
-    }
+  cursor: default;
 
-    #openingScreen.hide {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
+  transition:
+    opacity 1.2s ease,
+    visibility 1.2s ease;
+}
 
-    .opening-content {
-      width: min(88%, 900px);
-      min-height: 80vh;
+#openingScreen.hide {
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 
-      text-align: center;
 
-      border: 1px solid #dfb8a9;
+.opening-content {
 
-      position: relative;
+  width: min(88%, 900px);
+  min-height: 80vh;
 
-      padding: 60px 25px;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    .opening-content::before {
-      content: "";
+  text-align: center;
 
-      position: absolute;
-      inset: 12px;
+  border: 1px solid #dfb8a9;
 
-      border:
-        1px solid
-        rgba(223, 184, 169, 0.55);
+  position: relative;
 
-      pointer-events: none;
-    }
+  padding: 60px 25px;
+}
 
-    .opening-crown {
-      font-size: 30px;
-      color: #b98578;
-      margin-bottom: 20px;
-      line-height: 1;
-    }
 
-    .opening-title {
-      font-family: "Great Vibes", cursive;
+.opening-content::before {
 
-      font-size:
-        clamp(70px, 11vw, 125px);
+  content: "";
 
-      font-weight: normal;
+  position: absolute;
 
-      line-height: 1;
+  inset: 12px;
 
-      color: #a86f73;
+  border:
+    1px solid
+    rgba(223, 184, 169, 0.55);
 
-      margin-bottom: 18px;
-    }
+  pointer-events: none;
+}
 
-    .opening-subtitle {
-      font-family:
-        "Cormorant Garamond",
-        serif;
 
-      font-size:
-        clamp(15px, 2vw, 21px);
+.opening-crown {
 
-      letter-spacing: 7px;
+  font-size: 30px;
 
-      text-transform: uppercase;
+  color: #b98578;
 
-      color: #996d6d;
+  margin-bottom: 20px;
 
-      margin-bottom: 35px;
-    }
+  line-height: 1;
+}
 
-    .opening-divider {
-      display: flex;
 
-      align-items: center;
-      justify-content: center;
+.opening-title {
 
-      gap: 15px;
+  font-family: "Great Vibes", cursive;
 
-      margin-bottom: 35px;
-    }
+  font-size:
+    clamp(70px, 11vw, 125px);
 
-    .opening-divider .line {
-      width: 80px;
-      height: 1px;
+  font-weight: normal;
 
-      background: #d5a49a;
-    }
+  line-height: 1;
 
-    .opening-divider .ornament {
-      font-size: 18px;
-      color: #bd897b;
-    }
+  color: #a86f73;
 
-    #enterButton {
-      border: none;
+  margin-bottom: 18px;
+}
 
-      background: transparent;
 
-      font-family:
-        "Cormorant Garamond",
-        serif;
+.opening-subtitle {
 
-      font-size: 17px;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
-      letter-spacing: 4px;
+  font-size:
+    clamp(15px, 2vw, 21px);
 
-      text-transform: uppercase;
+  letter-spacing: 7px;
 
-      color: #9b686b;
+  text-transform: uppercase;
 
-      cursor: pointer;
+  color: #996d6d;
 
-      padding: 12px 20px;
+  margin-bottom: 35px;
+}
 
-      animation:
-        gentlePulse
-        2.2s
-        ease-in-out
-        infinite;
-    }
 
-    #enterButton:hover {
-      opacity: 0.7;
-    }
+.opening-divider {
 
-    #enterButton:focus {
-      outline: none;
-    }
+  display: flex;
 
-    @keyframes gentlePulse {
+  align-items: center;
 
-      0%,
-      100% {
-        opacity: 1;
-      }
+  justify-content: center;
 
-      50% {
-        opacity: 0.55;
-      }
+  gap: 15px;
 
-    }
+  margin-bottom: 35px;
+}
 
 
-    /* ═══════════════════════════════
-       🌸 FALLING PETALS
-       ═══════════════════════════════ */
+.opening-divider .line {
 
-    .petal {
-      position: fixed;
+  width: 80px;
 
-      top: -30px;
+  height: 1px;
 
-      width: 12px;
-      height: 8px;
+  background: #d5a49a;
+}
 
-      border-radius:
-        100% 0 100% 0;
 
-      pointer-events: none;
+.opening-divider .ornament {
 
-      z-index: 9999;
+  font-size: 18px;
 
-      opacity: 0.7;
+  color: #bd897b;
+}
 
-      animation:
-        petalFall
-        8s
-        linear
-        forwards;
-    }
 
-    @keyframes petalFall {
+/* =========================================
+   ENTER BUTTON
+========================================= */
 
-      from {
-        transform:
-          translateY(-30px)
-          rotate(0deg);
-      }
+#enterButton {
 
-      to {
-        transform:
-          translateY(110vh)
-          rotate(360deg);
-      }
+  border: none;
 
-    }
+  background: transparent;
 
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
-    /* ═══════════════════════════════
-       🎵 MUSIC BUTTON
-       ═══════════════════════════════ */
+  font-size: 17px;
 
-    #musicButton {
-      position: fixed;
+  letter-spacing: 4px;
 
-      right: 20px;
-      bottom: 20px;
+  text-transform: uppercase;
 
-      z-index: 15000;
+  color: #9b686b;
 
-      padding: 10px 16px;
+  cursor: pointer;
 
-      border:
-        1px solid
-        rgba(127, 79, 89, 0.45);
+  padding: 12px 20px;
 
-      background:
-        rgba(255, 250, 246, 0.92);
+  animation:
+    gentlePulse
+    2.2s
+    ease-in-out
+    infinite;
+}
 
-      color: #7F4F59;
 
-      font-family:
-        "Cormorant Garamond",
-        serif;
+#enterButton:hover {
+  opacity: 0.7;
+}
 
-      font-size: 15px;
 
-      letter-spacing: 1px;
+#enterButton:focus {
+  outline: none;
+}
 
-      cursor: pointer;
 
-      backdrop-filter: blur(6px);
+@keyframes gentlePulse {
 
-      transition: 0.3s;
-    }
+  0%,
+  100% {
+    opacity: 1;
+  }
 
-    #musicButton:hover {
-      opacity: 0.75;
-    }
+  50% {
+    opacity: 0.55;
+  }
 
+}
 
-    /* ═══════════════════════════════
-       ✦ HERO
-       ═══════════════════════════════ */
 
-    .hero {
-      min-height: 100vh;
+/* =========================================
+   FALLING PETALS
+========================================= */
 
-      display: flex;
+.petal {
 
-      align-items: center;
-      justify-content: center;
+  position: fixed;
 
-      text-align: center;
+  top: -30px;
 
-      padding: 40px 20px;
+  width: 12px;
+  height: 8px;
 
-      background:
+  border-radius:
+    100% 0 100% 0;
 
-        linear-gradient(
-          rgba(45, 25, 35, 0.38),
-          rgba(45, 25, 35, 0.42)
-        ),
+  pointer-events: none;
 
-        url(
-          "ChatGPT Image Aug 31, 2026 at 06_24_03 PM.png"
-        );
+  z-index: 9999;
 
-      background-size: cover;
+  opacity: 0.7;
 
-      background-position: center;
+  animation:
+    petalFall
+    8s
+    linear
+    forwards;
+}
 
-      background-repeat: no-repeat;
-    }
 
-    .hero-content {
-      max-width: 750px;
-      color: white;
-    }
+@keyframes petalFall {
 
-    .small-title {
-      font-size: 14px;
+  from {
 
-      letter-spacing: 5px;
+    transform:
+      translateY(-30px)
+      rotate(0deg);
+  }
 
-      text-transform: uppercase;
+  to {
 
-      margin-bottom: 20px;
-    }
+    transform:
+      translateY(110vh)
+      rotate(360deg);
+  }
 
-    .hero h1 {
-      font-family:
-        "Cormorant Garamond",
-        serif;
+}
 
-      font-size:
-        clamp(55px, 10vw, 110px);
 
-      font-weight: 500;
+/* =========================================
+   MUSIC BUTTON
+========================================= */
 
-      line-height: 0.9;
+#musicButton {
 
-      margin-bottom: 20px;
+  position: fixed;
 
-      color: #FFF4EE;
+  right: 20px;
+  bottom: 20px;
 
-      text-shadow:
-        0 3px 15px
-        rgba(60, 35, 45, 0.5);
-    }
+  z-index: 15000;
 
-    .hero-script {
-      font-family:
-        "Great Vibes",
-        cursive;
+  padding: 10px 16px;
 
-      font-size: 0.9em;
+  border:
+    1px solid
+    rgba(127, 79, 89, 0.45);
 
-      font-weight: normal;
+  background:
+    rgba(255, 250, 246, 0.92);
 
-      display: inline-block;
+  color: #7F4F59;
 
-      margin-bottom: 8px;
-    }
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
-    .hero p {
-      font-size: 18px;
-      letter-spacing: 2px;
-    }
+  font-size: 15px;
 
-    .scroll-button {
-      display: inline-block;
+  letter-spacing: 1px;
 
-      margin-top: 40px;
+  cursor: pointer;
 
-      padding: 13px 28px;
+  backdrop-filter: blur(6px);
 
-      border:
-        1px solid white;
+  transition: 0.3s;
+}
 
-      color: white;
 
-      text-decoration: none;
+#musicButton:hover {
+  opacity: 0.75;
+}
 
-      transition: 0.3s;
-    }
 
-    .scroll-button:hover {
-      background: white;
-      color: #3d3028;
-    }
+/* =========================================
+   HERO
+========================================= */
 
+.hero {
 
-    /* ═══════════════════════════════
-       GENERAL SECTIONS
-       ═══════════════════════════════ */
+  min-height: 100vh;
 
-    .section {
-      padding: 90px 20px;
-    }
+  display: flex;
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-    }
+  align-items: center;
 
-    .intro {
-      text-align: center;
-    }
+  justify-content: center;
 
-    .section-label {
-      font-size: 12px;
+  text-align: center;
 
-      letter-spacing: 4px;
+  padding: 40px 20px;
 
-      text-transform: uppercase;
+  background:
 
-      margin-bottom: 15px;
+    linear-gradient(
+      rgba(45, 25, 35, 0.38),
+      rgba(45, 25, 35, 0.42)
+    ),
 
-      opacity: 0.7;
-    }
+    url(
+      "ChatGPT Image Aug 31, 2026 at 06_24_03 PM.png"
+    );
 
-    .intro h2 {
-      font-size: 42px;
+  background-size: cover;
 
-      font-weight: normal;
+  background-position: center;
 
-      margin-bottom: 25px;
-    }
+  background-repeat: no-repeat;
+}
 
-    .intro p {
-      max-width: 650px;
 
-      margin: auto;
+.hero-content {
 
-      font-size: 17px;
-    }
+  max-width: 750px;
 
+  color: white;
+}
 
-    /* ═══════════════════════════════
-       DETAILS
-       ═══════════════════════════════ */
 
-    .details {
-      background: #ebe2d4;
-    }
+.small-title {
 
-    .detail-grid {
-      display: grid;
+  font-size: 14px;
 
-      grid-template-columns:
-        repeat(3, 1fr);
+  letter-spacing: 5px;
 
-      gap: 25px;
+  text-transform: uppercase;
 
-      text-align: center;
-    }
+  margin-bottom: 20px;
+}
 
-    .detail-card {
-      padding: 30px 20px;
 
-      border:
-        1px solid
-        rgba(61, 48, 40, 0.2);
-    }
+.hero h1 {
 
-    .detail-card .icon {
-      font-size: 30px;
+  font-family:
+    "Cormorant Garamond",
+    serif;
 
-      margin-bottom: 10px;
-    }
+  font-size:
+    clamp(55px, 10vw, 110px);
 
-    .detail-card h3 {
-      font-size: 20px;
+  font-weight: 500;
 
-      font-weight: normal;
+  line-height: 0.9;
 
-      margin-bottom: 8px;
-    }
+  margin-bottom: 20px;
 
-    .detail-card a {
-      text-decoration: none;
-    }
+  color: #FFF4EE;
 
+  text-shadow:
+    0 3px 15px
+    rgba(60, 35, 45, 0.5);
+}
 
-    /* ═══════════════════════════════
-       DRESS CODE
-       ═══════════════════════════════ */
 
-    .dress-code {
-      background: #FFEAEA;
+.hero-script {
 
-      padding: 55px 20px;
+  font-family:
+    "Great Vibes",
+    cursive;
 
-      border-top:
-        1px solid
-        rgba(61, 48, 40, 0.12);
+  font-size: 0.9em;
 
-      border-bottom:
-        1px solid
-        rgba(61, 48, 40, 0.12);
+  font-weight: normal;
 
-      color: #6F4B52;
-    }
+  display: inline-block;
 
-    .dress-code h2 {
-      color: #7F4F59;
-    }
+  margin-bottom: 8px;
+}
 
-    .dress-code .section-label {
-      color: #7F4F59;
-    }
 
-    .dress-code p {
-      color: #6F4B52;
-    }
+.hero p {
 
+  font-size: 18px;
 
-    /* ═══════════════════════════════
-       RSVP
-       ═══════════════════════════════ */
+  letter-spacing: 2px;
+}
 
-    .rsvp-title {
-      text-align: center;
 
-      margin-bottom: 45px;
-    }
+/* =========================================
+   RSVP SCROLL BUTTON
+========================================= */
 
-    .rsvp-title h2 {
-      font-size: 45px;
+.scroll-button {
 
-      font-weight: normal;
-    }
+  display: inline-block;
 
-    form {
-      max-width: 650px;
+  margin-top: 40px;
 
-      margin: auto;
-    }
+  padding: 13px 28px;
 
-    .form-group {
-      margin-bottom: 25px;
-    }
+  border:
+    1px solid white;
 
-    label {
-      display: block;
+  color: white;
 
-      margin-bottom: 9px;
+  text-decoration: none;
 
-      font-size: 14px;
+  transition: 0.3s;
+}
 
-      letter-spacing: 1px;
-    }
 
-    input,
-    select,
-    textarea {
-      width: 100%;
+.scroll-button:hover {
 
-      padding: 14px 15px;
+  background: white;
 
-      border:
-        1px solid
-        #b9aa9a;
+  color: #3d3028;
+}
 
-      background: transparent;
 
-      color: #3d3028;
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
 
-      font-family: inherit;
+.section {
 
-      font-size: 16px;
+  padding: 90px 20px;
+}
 
-      outline: none;
-    }
 
-    textarea {
-      min-height: 120px;
+.container {
 
-      resize: vertical;
-    }
+  max-width: 900px;
 
-    .submit-button {
-      width: 100%;
+  margin: auto;
+}
 
-      padding: 16px;
 
-      border: none;
+.intro {
 
-      background: #7F4F59;
+  text-align: center;
+}
 
-      color: white;
 
-      font-family: inherit;
+.section-label {
 
-      font-size: 16px;
+  font-size: 12px;
 
-      letter-spacing: 2px;
+  letter-spacing: 4px;
 
-      cursor: pointer;
-    }
+  text-transform: uppercase;
 
-    .submit-button:disabled {
-      opacity: 0.5;
+  margin-bottom: 15px;
 
-      cursor: wait;
-    }
+  opacity: 0.7;
+}
 
-    #status {
-      text-align: center;
 
-      margin-top: 20px;
+.intro h2 {
 
-      min-height: 25px;
-    }
+  font-size: 42px;
 
+  font-weight: normal;
 
-    /* ═══════════════════════════════
-       FOOTER
-       ═══════════════════════════════ */
+  margin-bottom: 25px;
+}
 
-    footer {
-      text-align: center;
 
-      padding: 35px 20px;
+.intro p {
 
-      background: #7F4F59;
+  max-width: 650px;
 
-      color: white;
+  margin: auto;
 
-      font-size: 14px;
+  font-size: 17px;
+}
 
-      letter-spacing: 1px;
-    }
 
+/* =========================================
+   DETAILS
+========================================= */
 
-    /* ═══════════════════════════════
-       MOBILE
-       ═══════════════════════════════ */
+.details {
 
-    @media (max-width: 700px) {
+  background: #ebe2d4;
+}
 
-      .detail-grid {
-        grid-template-columns: 1fr;
-      }
 
-      .section {
-        padding: 65px 20px;
-      }
+.detail-grid {
 
-      .intro h2,
-      .rsvp-title h2 {
-        font-size: 34px;
-      }
+  display: grid;
 
-      .hero h1 {
-        font-size: 65px;
-      }
+  grid-template-columns:
+    repeat(3, 1fr);
 
-      .hero p {
-        font-size: 15px;
-      }
+  gap: 25px;
 
-    }
+  text-align: center;
+}
 
 
-    @media (max-width: 600px) {
+.detail-card {
 
-      .opening-content {
-        min-height: 75vh;
+  padding: 30px 20px;
 
-        padding: 45px 20px;
-      }
+  border:
+    1px solid
+    rgba(61, 48, 40, 0.2);
+}
 
-      .opening-content::before {
-        inset: 9px;
-      }
 
-      .opening-title {
-        font-size: 70px;
-      }
+.detail-card .icon {
 
-      .opening-subtitle {
-        letter-spacing: 4px;
-      }
+  font-size: 30px;
 
-      .opening-divider .line {
-        width: 55px;
-      }
+  margin-bottom: 10px;
+}
 
-    }
 
-  </style>
+.detail-card h3 {
+
+  font-size: 20px;
+
+  font-weight: normal;
+
+  margin-bottom: 8px;
+}
+
+
+.detail-card a {
+
+  text-decoration: none;
+}
+
+
+/* =========================================
+   DRESS CODE
+========================================= */
+
+.dress-code {
+
+  background: #FFEAEA;
+
+  padding: 55px 20px;
+
+  border-top:
+    1px solid
+    rgba(61, 48, 40, 0.12);
+
+  border-bottom:
+    1px solid
+    rgba(61, 48, 40, 0.12);
+
+  color: #6F4B52;
+}
+
+
+.dress-code h2 {
+
+  color: #7F4F59;
+}
+
+
+.dress-code .section-label {
+
+  color: #7F4F59;
+}
+
+
+.dress-code p {
+
+  color: #6F4B52;
+}
+
+
+/* =========================================
+   RSVP
+========================================= */
+
+.rsvp-title {
+
+  text-align: center;
+
+  margin-bottom: 45px;
+}
+
+
+.rsvp-title h2 {
+
+  font-size: 45px;
+
+  font-weight: normal;
+}
+
+
+form {
+
+  max-width: 650px;
+
+  margin: auto;
+}
+
+
+.form-group {
+
+  margin-bottom: 25px;
+}
+
+
+label {
+
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+}
+
+
+input,
+select,
+textarea {
+
+  width: 100%;
+
+  padding: 14px 15px;
+
+  border:
+    1px solid
+    #b9aa9a;
+
+  background: transparent;
+
+  color: #3d3028;
+
+  font-family: inherit;
+
+  font-size: 16px;
+
+  outline: none;
+}
+
+
+textarea {
+
+  min-height: 120px;
+
+  resize: vertical;
+}
+
+
+.submit-button {
+
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+
+  background: #7F4F59;
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 16px;
+
+  letter-spacing: 2px;
+
+  cursor: pointer;
+}
+
+
+.submit-button:disabled {
+
+  opacity: 0.5;
+
+  cursor: wait;
+}
+
+
+#status {
+
+  text-align: center;
+
+  margin-top: 20px;
+
+  min-height: 25px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+  text-align: center;
+
+  padding: 35px 20px;
+
+  background: #7F4F59;
+
+  color: white;
+
+  font-size: 14px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 65px 20px;
+  }
+
+  .intro h2,
+  .rsvp-title h2 {
+    font-size: 34px;
+  }
+
+  .hero h1 {
+    font-size: 65px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .opening-content {
+
+    min-height: 75vh;
+
+    padding: 45px 20px;
+  }
+
+  .opening-content::before {
+    inset: 9px;
+  }
+
+  .opening-title {
+    font-size: 70px;
+  }
+
+  .opening-subtitle {
+    letter-spacing: 4px;
+  }
+
+  .opening-divider .line {
+    width: 55px;
+  }
+
+}
+
+</style>
 
 </head>
 
-
 <body>
 
+<!-- =========================================
+     OPENING SCREEN
+========================================= -->
 
-  <!-- ═══════════════════════════════
-       ✦ OPENING SCREEN
-       ═══════════════════════════════ -->
+<div id="openingScreen">
 
-  <div id="openingScreen">
+  <div class="opening-content">
 
-    <div class="opening-content">
+```
+<div class="opening-crown">
+  ♕
+</div>
 
-      <div class="opening-crown">
-        ♕
-      </div>
+<div class="opening-title">
+  Diva's
+</div>
 
-      <div class="opening-title">
-        Diva's
-      </div>
+<div class="opening-subtitle">
+  Sweet Seventeen Birthday Party
+</div>
 
-      <div class="opening-subtitle">
-        Sweet Seventeen Birthday Party
-      </div>
+<div class="opening-divider">
 
-      <div class="opening-divider">
+  <span class="line"></span>
 
-        <span class="line"></span>
+  <span class="ornament">
+    ✦
+  </span>
 
-        <span class="ornament">
-          ✦
-        </span>
+  <span class="line"></span>
 
-        <span class="line"></span>
+</div>
 
-      </div>
+<button
+  id="enterButton"
+  type="button"
+>
+  Tap to Enter ♡
+</button>
+```
 
-      <button
-        id="enterButton"
-        type="button"
-      >
-        Tap to Enter ♡
-      </button>
+  </div>
 
+</div>
+
+<!-- =========================================
+     BACKGROUND MUSIC
+========================================= -->
+
+<audio
+id="bgMusic"
+loop
+preload="auto"
+
+>
+
+<source
+src="A little sprinkle of happiness.mp3"
+type="audio/mpeg"
+
+>
+
+</audio>
+
+<!-- =========================================
+     MUSIC BUTTON
+========================================= -->
+
+<button
+id="musicButton"
+type="button"
+
+>
+
+♫ Music </button>
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+```
+<div class="small-title">
+  You're Invited
+</div>
+
+<h1>
+
+  <span class="hero-script">
+    Diva's
+  </span>
+
+  <br>
+
+  Sweet 17
+
+</h1>
+
+<p>
+  A little celebration for a very special day.
+</p>
+
+<a
+  href="#rsvp"
+  class="scroll-button"
+>
+  RSVP
+</a>
+```
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     INTRO
+========================================= -->
+
+<section class="section intro">
+
+  <div class="container">
+
+```
+<div class="section-label">
+  A Special Day
+</div>
+
+<h2>
+  Come celebrate with me.
+</h2>
+
+<p>
+  I'd love to have you there to celebrate another year,
+  make some memories, eat good food, and have a wonderful
+  time together.
+</p>
+```
+
+  </div>
+
+</section>
+
+<!-- =========================================
+     DETAILS
+========================================= -->
+
+<section class="section details">
+
+  <div class="container">
+
+```
+<div class="detail-grid">
+
+
+  <div class="detail-card">
+
+    <div class="icon">
+      📅
     </div>
+
+    <h3>
+      Date
+    </h3>
+
+    <p>
+      Saturday, 12 September, 2026
+    </p>
 
   </div>
 
 
-  <!-- ═══════════════════════════════
-       🎵 BACKGROUND MUSIC
-       ═══════════════════════════════ -->
+  <div class="detail-card">
 
-  <audio
-    id="bgMusic"
-    loop
-    preload="auto"
-  >
+    <div class="icon">
+      🕰️
+    </div>
 
-    <source
-      src="A little sprinkle of happiness.mp3"
-      type="audio/mpeg"
-    >
+    <h3>
+      Time
+    </h3>
 
-  </audio>
+    <p>
+      17:00-20:00
+    </p>
 
-
-  <!-- ═══════════════════════════════
-       🎵 MUSIC BUTTON
-       ═══════════════════════════════ -->
-
-  <button
-    id="musicButton"
-    type="button"
-  >
-    ♫ Music
-  </button>
+  </div>
 
 
-  <!-- ═══════════════════════════════
-       ✦ HERO
-       ═══════════════════════════════ -->
+  <div class="detail-card">
 
-  <section class="hero">
+    <div class="icon">
+      📍
+    </div>
 
-    <div class="hero-content">
+    <h3>
+      Location
+    </h3>
 
-      <div class="small-title">
-        You're Invited
-      </div>
-
-      <h1>
-
-        <span class="hero-script">
-          Diva's
-        </span>
-
-        <br>
-
-        Sweet 17
-
-      </h1>
-
-      <p>
-        A little celebration for a very special day.
-      </p>
+    <p>
 
       <a
-        href="#rsvp"
-        class="scroll-button"
+        href="https://share.google/8ClH3qQ1Kh2SxSfVB"
+        target="_blank"
+        rel="noopener noreferrer"
+        style="color: inherit;"
       >
-        RSVP
+        Paprika Restaurant, The Spring Club
       </a>
 
-    </div>
+    </p>
 
-  </section>
+    <p
+      style="
+        font-size: 13px;
+        margin-top: 5px;
+        opacity: 0.7;
+      "
+    >
+      Located by the pool
+    </p>
 
-
-  <!-- ═══════════════════════════════
-       INTRO
-       ═══════════════════════════════ -->
-
-  <section class="section intro">
-
-    <div class="container">
-
-      <div class="section-label">
-        A Special Day
-      </div>
-
-      <h2>
-        Come celebrate with me.
-      </h2>
-
-      <p>
-        I'd love to have you there to celebrate another year,
-        make some memories, eat good food, and have a wonderful
-        time together.
-      </p>
-
-    </div>
-
-  </section>
+  </div>
 
 
-  <!-- ═══════════════════════════════
-       DETAILS
-       ═══════════════════════════════ -->
+</div>
+```
 
-  <section class="section details">
+  </div>
 
-    <div class="container">
+</section>
 
-      <div class="detail-grid">
+<!-- =========================================
+     DRESS CODE
+========================================= -->
 
+<section class="section dress-code">
 
-        <!-- DATE -->
+  <div class="container">
 
-        <div class="detail-card">
+```
+<div class="rsvp-title">
 
-          <div class="icon">
-            📅
-          </div>
+  <div class="section-label">
+    Dress Code
+  </div>
 
-          <h3>
-            Date
-          </h3>
+  <h2>
+    Pink Tones
+  </h2>
 
-          <p>
-            Saturday, 12 September, 2026
-          </p>
+  <p style="margin-top: 15px;">
+    Blush • Dusty Rose • Mauve • Soft Pink
+  </p>
 
-        </div>
-
-
-        <!-- TIME -->
-
-        <div class="detail-card">
-
-          <div class="icon">
-            🕰️
-          </div>
-
-          <h3>
-            Time
-          </h3>
-
-          <p>
-            17:00-20:00
-          </p>
-
-        </div>
-
-
-        <!-- LOCATION -->
-
-        <div class="detail-card">
-
-          <div class="icon">
-            📍
-          </div>
-
-          <h3>
-            Location
-          </h3>
-
-          <p>
-
-            <a
-              href="https://share.google/8ClH3qQ1Kh2SxSfVB"
-              target="_blank"
-              rel="noopener noreferrer"
-              style="color: inherit;"
-            >
-              Paprika Restaurant, The Spring Club
-            </a>
-
-          </p>
-
-          <p
-            style="
-              font-size: 13px;
-              margin-top: 5px;
-              opacity: 0.7;
-            "
-          >
-            Located by the pool
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ═══════════════════════════════
-       DRESS CODE
-       ═══════════════════════════════ -->
-
-  <section class="section dress-code">
-
-    <div class="container">
-
-      <div class="rsvp-title">
-
-        <div class="section-label">
-          Dress Code
-        </div>
-
-        <h2>
-          Pink Tones
-        </h2>
-
-        <p style="margin-top: 15px;">
-          Blush • Dusty Rose • Mauve • Soft Pink
-        </p>
-
-        <p
-          style="
-            font-size: 13px;
-            margin-top: 8px;
-            opacity: 0.7;
-          "
-        >
-          Please avoid white & ivory.
-        </p>
-
-        <div class="ribbon-line"></div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ═══════════════════════════════
-       RSVP
-       ═══════════════════════════════ -->
-
-  <section
-    class="section"
-    id="rsvp"
+  <p
+    style="
+      font-size: 13px;
+      margin-top: 8px;
+      opacity: 0.7;
+    "
   >
+    Please avoid white & ivory.
+  </p>
 
-    <div class="container">
+  <div class="ribbon-line"></div>
 
-      <div class="rsvp-title">
+</div>
+```
 
-        <div class="section-label">
-          RSVP
-        </div>
+  </div>
 
-        <h2>
-          Will you be joining?
-        </h2>
+</section>
 
-      </div>
+<!-- =========================================
+     RSVP
+========================================= -->
 
+<section
+  class="section"
+  id="rsvp"
+>
 
-      <form id="rsvpForm">
+  <div class="container">
 
+```
+<div class="rsvp-title">
 
-        <!-- NAME -->
+  <div class="section-label">
+    RSVP
+  </div>
 
-        <div class="form-group">
+  <h2>
+    Will you be joining?
+  </h2>
 
-          <label for="name">
-            YOUR NAME
-          </label>
+</div>
 
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your name"
-            required
-          >
 
-        </div>
+<form id="rsvpForm">
 
 
-        <!-- ATTENDANCE -->
+  <div class="form-group">
 
-        <div class="form-group">
+    <label for="name">
+      YOUR NAME
+    </label>
 
-          <label for="attendance">
-            ATTENDANCE
-          </label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Enter your name"
+      required
+    >
 
-          <select
-            id="attendance"
-            name="attendance"
-            required
-          >
+  </div>
 
-            <option
-              value=""
-              disabled
-              selected
-            >
-              Select your answer
-            </option>
 
-            <option value="Yes">
-              Yes, I'll be there!
-            </option>
+  <div class="form-group">
 
-            <option value="No">
-              Sorry, I can't make it.
-            </option>
+    <label for="attendance">
+      ATTENDANCE
+    </label>
 
-          </select>
+    <select
+      id="attendance"
+      name="attendance"
+      required
+    >
 
-        </div>
+      <option
+        value=""
+        disabled
+        selected
+      >
+        Select your answer
+      </option>
 
+      <option value="Yes">
+        Yes, I'll be there!
+      </option>
 
-        <!-- FOOD -->
+      <option value="No">
+        Sorry, I can't make it.
+      </option>
 
-        <div class="form-group">
+    </select>
 
-          <label for="food">
-            FOOD
-          </label>
+  </div>
 
-          <input
-            type="text"
-            id="food"
-            name="food"
-            placeholder="What would you like to eat?"
-            required
-          >
 
-        </div>
+  <div class="form-group">
 
+    <label for="food">
+      FOOD
+    </label>
 
-        <!-- DRINK -->
+    <input
+      type="text"
+      id="food"
+      name="food"
+      placeholder="What would you like to eat?"
+      required
+    >
 
-        <div class="form-group">
+  </div>
 
-          <label for="drink">
-            DRINK
-          </label>
 
-          <select
-            id="drink"
-            name="drink"
-            required
-          >
+  <div class="form-group">
 
-            <option
-              value=""
-              disabled
-              selected
-            >
-              Choose your drink
-            </option>
+    <label for="drink">
+      DRINK
+    </label>
 
-            <option value="Iced Tea">
-              🧊 Iced Tea
-            </option>
+    <select
+      id="drink"
+      name="drink"
+      required
+    >
 
-            <option value="Hot Tea">
-              ☕ Hot Tea
-            </option>
+      <option
+        value=""
+        disabled
+        selected
+      >
+        Choose your drink
+      </option>
 
-            <option value="Lemon Tea">
-              🍋 Lemon Tea
-            </option>
+      <option value="Iced Tea">
+        🧊 Iced Tea
+      </option>
 
-          </select>
+      <option value="Hot Tea">
+        ☕ Hot Tea
+      </option>
 
-        </div>
+      <option value="Lemon Tea">
+        🍋 Lemon Tea
+      </option>
 
+    </select>
 
-        <!-- NOTE -->
+  </div>
 
-        <div class="form-group">
 
-          <label for="note">
-            NOTE
-          </label>
+  <div class="form-group">
 
-          <textarea
-            id="note"
-            name="note"
-            placeholder="Anything you'd like to tell me?"
-          ></textarea>
+    <label for="note">
+      NOTE
+    </label>
 
-        </div>
+    <textarea
+      id="note"
+      name="note"
+      placeholder="Anything you'd like to tell me?"
+    ></textarea>
 
+  </div>
 
-        <!-- SUBMIT -->
 
-        <button
-          type="submit"
-          class="submit-button"
-          id="submitButton"
-        >
-          SEND RSVP
-        </button>
+  <button
+    type="submit"
+    class="submit-button"
+    id="submitButton"
+  >
+    SEND RSVP
+  </button>
 
-        <div id="status"></div>
+  <div id="status"></div>
 
-      </form>
+</form>
+```
 
-    </div>
+  </div>
 
-  </section>
+</section>
 
+<!-- =========================================
+     FOOTER
+========================================= -->
 
-  <!-- ═══════════════════════════════
-       FOOTER
-       ═══════════════════════════════ -->
+<footer>
+  With love, Diva ♡
+</footer>
 
-  <footer>
-    With love, Diva ♡
-  </footer>
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
 
+<script>
 
-  <!-- ═══════════════════════════════
-       JAVASCRIPT
-       ═══════════════════════════════ -->
 
-  <script>
+/* =========================================
+   FORCE PAGE TO START AT TOP
+========================================= */
 
-    /* ═══════════════════════════════
-       ✦ ELEMENTS
-       ═══════════════════════════════ */
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
 
-    const openingScreen =
-      document.getElementById("openingScreen");
 
-    const enterButton =
-      document.getElementById("enterButton");
+window.addEventListener("load", function() {
 
-    const bgMusic =
-      document.getElementById("bgMusic");
+  window.scrollTo(0, 0);
 
-    const musicButton =
-      document.getElementById("musicButton");
+});
 
-    const form =
-      document.getElementById("rsvpForm");
 
-    const button =
-      document.getElementById("submitButton");
+/* =========================================
+   ELEMENTS
+========================================= */
 
-    const status =
-      document.getElementById("status");
+const openingScreen =
+  document.getElementById("openingScreen");
 
+const enterButton =
+  document.getElementById("enterButton");
 
-    /* ═══════════════════════════════
-       ✦ FORCE START AT TOP
-       ═══════════════════════════════ */
+const bgMusic =
+  document.getElementById("bgMusic");
 
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
+const musicButton =
+  document.getElementById("musicButton");
 
+const form =
+  document.getElementById("rsvpForm");
 
-    /*
-     * Remove any #rsvp or other hash
-     * from the URL when the page opens.
-     */
+const submitButton =
+  document.getElementById("submitButton");
 
-    if (window.location.hash) {
+const status =
+  document.getElementById("status");
 
-      history.replaceState(
-        null,
-        "",
-        window.location.pathname +
-        window.location.search
+
+/* =========================================
+   LOCK PAGE WHILE OPENING
+========================================= */
+
+document.body.style.overflow = "hidden";
+
+
+/* =========================================
+   TAP TO ENTER
+========================================= */
+
+enterButton.addEventListener("click", function(event) {
+
+  event.preventDefault();
+  event.stopPropagation();
+
+
+  /* Hide opening */
+
+  openingScreen.classList.add("hide");
+
+
+  /* Unlock scrolling */
+
+  document.body.style.overflow = "";
+
+
+  /* Make absolutely sure we remain at HERO */
+
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "instant"
+  });
+
+
+  /* Start music */
+
+  bgMusic.currentTime = 0;
+
+  bgMusic.play()
+    .then(function() {
+
+      musicButton.textContent = "♫ Music ON";
+
+    })
+    .catch(function(error) {
+
+      console.log(
+        "Music could not start:",
+        error
       );
 
-    }
+      musicButton.textContent = "♫ Music OFF";
 
+    });
 
-    /*
-     * Force page to the very top.
-     */
+});
 
-    window.scrollTo(0, 0);
 
+/* =========================================
+   MUSIC BUTTON
+========================================= */
 
-    window.addEventListener(
-      "DOMContentLoaded",
-      function() {
+musicButton.addEventListener("click", function(event) {
 
-        window.scrollTo(0, 0);
+  event.preventDefault();
+  event.stopPropagation();
 
-      }
-    );
 
+  if (bgMusic.paused) {
 
-    window.addEventListener(
-      "load",
-      function() {
+    bgMusic.play()
+      .then(function() {
 
-        window.scrollTo(0, 0);
+        musicButton.textContent =
+          "♫ Music ON";
 
-      }
-    );
+      })
+      .catch(function(error) {
 
+        console.log(
+          "Music could not start:",
+          error
+        );
 
-    /* ═══════════════════════════════
-       ✦ LOCK SCROLL WHILE OPENING
-       ═══════════════════════════════ */
+      });
 
-    document.body.style.overflow = "hidden";
+  }
 
+  else {
 
-    /* ═══════════════════════════════
-       ✦ TAP TO ENTER
-       ═══════════════════════════════ */
+    bgMusic.pause();
 
-    enterButton.addEventListener(
-      "click",
-      function(event) {
+    musicButton.textContent =
+      "♫ Music OFF";
 
-        event.preventDefault();
-        event.stopPropagation();
+  }
 
+});
 
-        /*
-         * Temporarily disable smooth
-         * scrolling so the reset is instant.
-         */
 
-        document.documentElement.style.scrollBehavior =
-          "auto";
+/* =========================================
+   FALLING PETALS
+========================================= */
 
+const petalColors = [
 
-        /*
-         * VERY IMPORTANT:
-         * Force the underlying page
-         * to the HERO before opening
-         * disappears.
-         */
+  "#D9A9A8",
+  "#C98F91",
+  "#E5C1BE",
+  "#F0D9D2"
 
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: "instant"
-        });
+];
 
 
-        /*
-         * Unlock scrolling.
-         */
+function createPetal() {
 
-        document.body.style.overflow = "";
+  const petal =
+    document.createElement("div");
 
+  petal.className =
+    "petal";
 
-        /*
-         * Hide opening screen.
-         */
+  petal.style.left =
+    Math.random() * 100 + "vw";
 
-        openingScreen.classList.add("hide");
+  petal.style.width =
+    (6 + Math.random() * 14) + "px";
 
+  petal.style.height =
+    (4 + Math.random() * 9) + "px";
 
-        /*
-         * Force top AGAIN after
-         * opening disappears.
-         */
-
-        requestAnimationFrame(function() {
-
-          window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "instant"
-          });
-
-        });
-
-
-        /*
-         * One more safety check.
-         */
-
-        setTimeout(function() {
-
-          window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: "instant"
-          });
-
-          /*
-           * Restore smooth scrolling.
-           */
-
-          document.documentElement.style.scrollBehavior =
-            "smooth";
-
-        }, 50);
-
-
-        /* ═══════════════════════════════
-           🎵 START MUSIC
-           ═══════════════════════════════ */
-
-        bgMusic.play()
-          .then(function() {
-
-            musicButton.textContent =
-              "♫ Music ON";
-
-          })
-          .catch(function(error) {
-
-            console.log(
-              "Music could not start:",
-              error
-            );
-
-            musicButton.textContent =
-              "♫ Music";
-
-          });
-
-      }
-    );
-
-
-    /* ═══════════════════════════════
-       🎵 MUSIC CONTROL
-       ═══════════════════════════════ */
-
-    musicButton.addEventListener(
-      "click",
-      function() {
-
-        if (bgMusic.paused) {
-
-          bgMusic.play()
-            .then(function() {
-
-              musicButton.textContent =
-                "♫ Music ON";
-
-            })
-            .catch(function(error) {
-
-              console.log(
-                "Music could not start:",
-                error
-              );
-
-            });
-
-        }
-
-        else {
-
-          bgMusic.pause();
-
-          musicButton.textContent =
-            "♫ Music OFF";
-
-        }
-
-      }
-    );
-
-
-    /* ═══════════════════════════════
-       🌸 FALLING PETALS
-       ═══════════════════════════════ */
-
-    const petalColors = [
-
-      "#D9A9A8",
-      "#C98F91",
-      "#E5C1BE",
-      "#F0D9D2"
-
+  petal.style.background =
+    petalColors[
+      Math.floor(
+        Math.random() *
+        petalColors.length
+      )
     ];
 
+  petal.style.animationDuration =
+    (7 + Math.random() * 6) + "s";
 
-    function createPetal() {
-
-      const petal =
-        document.createElement("div");
-
-      petal.className = "petal";
+  document.body.appendChild(petal);
 
 
-      petal.style.left =
-        Math.random() * 100 + "vw";
+  setTimeout(function() {
+
+    petal.remove();
+
+  }, 15000);
+
+}
 
 
-      petal.style.width =
-        (6 + Math.random() * 14) +
-        "px";
+setInterval(
+  createPetal,
+  650
+);
 
 
-      petal.style.height =
-        (4 + Math.random() * 9) +
-        "px";
+/* =========================================
+   RSVP → GOOGLE SHEETS
+========================================= */
+
+const SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbzPmh7UWf86L90yNUIox9L6huCfDcbVi0wgOBq64ZnfBbaeSk1KRvXyF4acis0b9jcY/exec";
 
 
-      petal.style.background =
-        petalColors[
-          Math.floor(
-            Math.random() *
-            petalColors.length
-          )
-        ];
+form.addEventListener(
+  "submit",
+  async function(event) {
+
+    event.preventDefault();
 
 
-      petal.style.animationDuration =
-        (7 + Math.random() * 6) +
-        "s";
+    submitButton.disabled = true;
+
+    submitButton.textContent =
+      "SENDING...";
+
+    status.textContent = "";
 
 
-      document.body.appendChild(
-        petal
+    const data = {
+
+      name:
+        document.getElementById("name").value,
+
+      attendance:
+        document.getElementById("attendance").value,
+
+      food:
+        document.getElementById("food").value,
+
+      drink:
+        document.getElementById("drink").value,
+
+      note:
+        document.getElementById("note").value
+
+    };
+
+
+    try {
+
+      await fetch(
+        SCRIPT_URL,
+        {
+
+          method: "POST",
+
+          mode: "no-cors",
+
+          headers: {
+
+            "Content-Type":
+              "text/plain;charset=utf-8"
+
+          },
+
+          body:
+            JSON.stringify(data)
+
+        }
       );
 
 
-      setTimeout(
-        function() {
+      status.textContent =
+        "Thank you! Your RSVP has been sent ♡";
 
-          petal.remove();
 
-        },
-        15000
-      );
+      form.reset();
 
     }
 
 
-    setInterval(
-      createPetal,
-      650
-    );
+    catch (error) {
+
+      console.error(error);
+
+      status.textContent =
+        "Something went wrong. Please try again.";
+
+    }
 
 
-    /* ═══════════════════════════════
-       RSVP → GOOGLE SHEETS
-       ═══════════════════════════════ */
+    submitButton.disabled = false;
 
-    const SCRIPT_URL =
-      "https://script.google.com/macros/s/AKfycbzPmh7UWf86L90yNUIox9L6huCfDcbVi0wgOBq64ZnfBbaeSk1KRvXyF4acis0b9jcY/exec";
+    submitButton.textContent =
+      "SEND RSVP";
 
+  }
+);
 
-    form.addEventListener(
-      "submit",
-      async function(event) {
-
-        event.preventDefault();
-
-
-        button.disabled = true;
-
-        button.textContent =
-          "SENDING...";
-
-        status.textContent = "";
-
-
-        const data = {
-
-          name:
-            document.getElementById(
-              "name"
-            ).value,
-
-          attendance:
-            document.getElementById(
-              "attendance"
-            ).value,
-
-          food:
-            document.getElementById(
-              "food"
-            ).value,
-
-          drink:
-            document.getElementById(
-              "drink"
-            ).value,
-
-          note:
-            document.getElementById(
-              "note"
-            ).value
-
-        };
-
-
-        try {
-
-          await fetch(
-            SCRIPT_URL,
-            {
-
-              method: "POST",
-
-              mode: "no-cors",
-
-              headers: {
-
-                "Content-Type":
-                  "text/plain;charset=utf-8"
-
-              },
-
-              body:
-                JSON.stringify(data)
-
-            }
-          );
-
-
-          status.textContent =
-            "Thank you! Your RSVP has been sent ♡";
-
-
-          form.reset();
-
-        }
-
-
-        catch (error) {
-
-          console.error(error);
-
-          status.textContent =
-            "Something went wrong. Please try again.";
-
-        }
-
-
-        button.disabled = false;
-
-        button.textContent =
-          "SEND RSVP";
-
-      }
-    );
-
-  </script>
-
+</script>
 
 </body>
 
